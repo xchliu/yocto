@@ -1,9 +1,14 @@
 package main
 
 import (
+	"bytes"
 	"fmt"
 	"net"
 	"os"
+	"runtime"
+	"strconv"
+	"strings"
+	//	"yoctodb/src/lib"
 )
 
 var SERVICE_ADDR = "0.0.0.0:6180"
@@ -21,13 +26,13 @@ func main() {
 			fmt.Printf("accept fail, err: %v\n", err)
 			continue
 		}
-		go cmd(conn) //thread ?
+		go cmd(conn) //thread handle?
 	}
 }
 
 // deal the commands
 func cmd(conn net.Conn) {
-	defer conn.Close()
+	//	defer conn.Close()
 	for {
 		var buf [128]byte
 		n, err := conn.Read(buf[:])
@@ -37,11 +42,33 @@ func cmd(conn net.Conn) {
 		}
 		str := string(buf[:n])
 		fmt.Printf("receive from client, data: %v\n", str)
-		conn.Write(buf[:n])
+		var buffer bytes.Buffer
+		buffer.WriteString(Goid())
+		buffer.WriteString("\nRoger for ")
+		buffer.Write(buf[:n])
+		conn.Write(buffer.Bytes())
 	}
 }
 
 // handle buffer io etc
 func deamon() {
 	return
+}
+
+func Goid() string {
+	defer func() {
+		if err := recover(); err != nil {
+			fmt.Println("panic recover:panic info:%v", err)
+		}
+	}()
+
+	var buf [64]byte
+	n := runtime.Stack(buf[:], false)
+	idField := strings.Fields(strings.TrimPrefix(string(buf[:n]), "goroutine "))[0]
+	id, err := strconv.Atoi(idField)
+	if err != nil {
+		panic(fmt.Sprintf("cannot get goroutine id: %v", err))
+	}
+	fmt.Print(id)
+	return idField
 }
