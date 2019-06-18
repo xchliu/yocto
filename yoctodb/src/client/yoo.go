@@ -27,3 +27,18 @@ func main() {
 		}
 	}
 }
+
+def client(cmd string){
+conn, err := net.Dial("tcp", SERVER)
+    defer conn.Close()
+    if err != nil {
+        fmt.Printf("connect failed, err : %v\n", err.Error())
+        return
+    }
+	_, err = conn.Write([]byte(trimmedInput))
+    if err != nil {
+        	fmt.Printf("write failed , err : %v\n", err)
+        	break
+        }
+    }	
+}
