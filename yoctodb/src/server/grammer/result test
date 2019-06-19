@@ -1,0 +1,55 @@
+(root
+	(sqlStatements
+		(sqlStatement
+			(dmlStatement
+				(selectStatement
+					(querySpecification SELECT
+						(selectElements
+							(selectElement
+								(fullColumnName
+									(uid
+										(simpleId
+											(keywordsCanBeId NAME)
+										)
+									)
+								)
+							)
+						)
+					(fromClause FROM
+						(tableSources
+							(tableSource
+								(tableSourceItem
+									(tableName
+										(fullId
+											(uid
+												(simpleId
+													(keywordsCanBeId AT)
+												)
+											)
+										)
+									)
+								)
+							)
+						) WHERE
+					(expression
+						(predicate
+							(predicate
+								(expressionAtom
+									(fullColumnName
+										(uid
+											(simpleId
+												(keywordsCanBeId NAME)
+											)
+										)
+									)
+								)
+							) LIKE
+						(predicate
+							(expressionAtom
+								(constant
+									(stringLiteral 'makang%')
+									)
+								)
+							)
+						)))))))) <EOF>)
+
