@@ -1,9 +1,10 @@
-package main
+package parser
 
 import (
 	"fmt"
+	"yoctodb/src/server/grammer/parser"
+
 	"github.com/antlr/antlr4/runtime/Go/antlr"
-	"yocto/yoctodb/src/server/grammer/parser"
 )
 
 type TreeShapeListener struct {

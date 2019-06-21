@@ -3,12 +3,13 @@ package main
 import (
 	"bytes"
 	"fmt"
+	//"lib"
+	"log"
 	"net"
 	"os"
 	"runtime"
 	"strconv"
 	"strings"
-	//	"yoctodb/src/lib"
 )
 
 var SERVICE_ADDR = "0.0.0.0:6180"
