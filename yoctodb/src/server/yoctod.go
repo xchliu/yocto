@@ -8,11 +8,16 @@ import (
 	"net"
 	"os"
 	"runtime"
+	"storage"
 	"strconv"
 	"strings"
 )
 
 var SERVICE_ADDR = "0.0.0.0:6180"
+
+func init() {
+	log.SetFlags(log.Ldate | log.Lshortfile)
+}
 
 // handle the service
 func main() {
