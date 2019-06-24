@@ -53,3 +53,43 @@
 							)
 						)))))))) <EOF>)
 
+(ddlStatement
+    (createTable CREATE TABLE
+        (tableName
+            (fullId
+                (uid
+                    (simpleId
+                        (engineName 'makang')
+                     )
+                )
+            )
+        )
+        (createDefinitions
+            (
+                (createDefinition
+                    (uid
+                        (simpleId C1)
+                    )
+                    (columnDefinition
+                        (dataType INT)
+                    )
+                ) ,
+
+                (createDefinition
+                    (uid
+                        (simpleId C2)
+                    )
+                    (columnDefinition
+                        (dataType VARCHAR
+                            (lengthOneDimension
+                                (
+                                    (decimalLiteral 120)
+                                )
+                            )
+                        )
+                    )
+                )
+            )
+        )
+    )
+)
