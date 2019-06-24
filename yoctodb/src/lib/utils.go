@@ -1,5 +1,12 @@
 package lib
 
+import (
+	"fmt"
+	"runtime"
+	"strconv"
+	"strings"
+)
+
 func Goid() int {
 	defer func() {
 		if err := recover(); err != nil {

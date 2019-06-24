@@ -9,7 +9,7 @@ import (
 
 var WELCOME string = "Welcome to the Yoctodb!"
 var PROMOTE string = "yoo> "
-var CMDEOF byte = '\n'
+var CMDEOF byte = ';'
 var SERVER = "127.0.0.1:6180"
 
 func main() {

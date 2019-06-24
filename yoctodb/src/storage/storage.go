@@ -1,15 +1,23 @@
 package storage
 
-type IORequest strunct {
-	type			int   //
-	metadata		string //db.table	
-	key			string 
-	data    		string	
+//import (
+//	"bytes"
+//)
+
+type IORequest struct {
+	iotype   int    //
+	metadata string //db.table
+	key      string
+	data     string
 }
 
+//var BUFFERPOOL := bytes.NewBuffer(s []byte)
 
 func SaveData() {
-	
+
+}
+func GetData() {
+
 }
 
 func file_read() {

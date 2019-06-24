@@ -3,11 +3,9 @@ package main
 import (
 	"bytes"
 	"fmt"
-	//"lib"
 	"log"
 	"net"
 	"os"
-	"runtime"
 	"storage"
 	"strconv"
 	"strings"
@@ -49,32 +47,45 @@ func cmd(conn net.Conn) {
 		str := string(buf[:n])
 		fmt.Printf("receive from client, data: %v\n", str)
 		var buffer bytes.Buffer
-		buffer.WriteString(Goid())
-		buffer.WriteString("\nRoger for ")
+		buffer.WriteString("Result for ")
 		buffer.Write(buf[:n])
+		buffer.WriteString(strconv.FormatBool(cmd_parse(str)) + "\n")
 		conn.Write(buffer.Bytes())
 	}
+}
+
+//TODO add the parser,and the cmd should be a json or parsetree
+func cmd_parse(cmd string) bool {
+	return cmd_run(cmd)
+}
+
+//TODO to be rebuild for parser
+func cmd_run(cmd string) bool {
+	fmt.Println(cmd)
+	if strings.HasPrefix(cmd, "create") {
+		return cmd_ddl(cmd)
+	}
+	return true
+}
+
+//TODO to be rebuild for parser
+func cmd_ddl(cmd string) bool {
+	fmt.Println(cmd)
+	cmd_arrary := strings.Split(cmd, " ")
+	obj_type := cmd_arrary[1]
+	obj_name := cmd_arrary[2]
+	switch obj_type {
+	case "database":
+		return storage.Create_db(obj_name)
+	case "table":
+		return storage.Create_table(obj_name)
+	default:
+		fmt.Println("Unknown type %s", obj_type)
+	}
+	return false
 }
 
 // handle buffer io etc
 func deamon() {
 	return
-}
-
-func Goid() string {
-	defer func() {
-		if err := recover(); err != nil {
-			fmt.Println("panic recover:panic info:%v", err)
-		}
-	}()
-
-	var buf [64]byte
-	n := runtime.Stack(buf[:], false)
-	idField := strings.Fields(strings.TrimPrefix(string(buf[:n]), "goroutine "))[0]
-	id, err := strconv.Atoi(idField)
-	if err != nil {
-		panic(fmt.Sprintf("cannot get goroutine id: %v", err))
-	}
-	fmt.Print(id)
-	return idField
 }
