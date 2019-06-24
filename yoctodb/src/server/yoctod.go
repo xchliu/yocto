@@ -56,6 +56,8 @@ func cmd(conn net.Conn) {
 
 //TODO add the parser,and the cmd should be a json or parsetree
 func cmd_parse(cmd string) bool {
+	cmd = strings.Replace(cmd, "\n", "", -1)
+	cmd = strings.Replace(cmd, ";", "", -1)
 	return cmd_run(cmd)
 }
 
@@ -72,13 +74,20 @@ func cmd_run(cmd string) bool {
 func cmd_ddl(cmd string) bool {
 	fmt.Println(cmd)
 	cmd_arrary := strings.Split(cmd, " ")
+	obj_action := cmd_arrary[0]
 	obj_type := cmd_arrary[1]
 	obj_name := cmd_arrary[2]
+	//TODO Get the session info
+	//db=session.db
+	db := "test"
+	//TODO tbd
+	//	obj_extra := cmd_arrary[3:]
+	fmt.Println(obj_type)
 	switch obj_type {
 	case "database":
-		return storage.Create_db(obj_name)
+		return storage.DDL_db(obj_name, obj_action)
 	case "table":
-		return storage.Create_table(obj_name)
+		return storage.DDL_table(db, obj_name, obj_action, strings.Join(cmd_arrary[3:], ""))
 	default:
 		fmt.Println("Unknown type %s", obj_type)
 	}

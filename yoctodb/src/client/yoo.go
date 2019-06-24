@@ -21,11 +21,11 @@ func main() {
 		if err != nil {
 			fmt.Fprintln(os.Stderr, err)
 		}
-		//fmt.Print(cmd)
-		client(cmd)
 		if cmd == "exit" {
 			os.Exit(0)
 		}
+		//fmt.Print(cmd)
+		client(cmd)
 	}
 }
 
