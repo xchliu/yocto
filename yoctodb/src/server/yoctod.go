@@ -15,6 +15,8 @@ var SERVICE_ADDR = "0.0.0.0:6180"
 
 func init() {
 	log.SetFlags(log.Ldate | log.Lshortfile)
+	fmt.Printf("init system")
+	go storage.StorageInit()
 }
 
 // handle the service
@@ -30,6 +32,7 @@ func main() {
 			fmt.Printf("accept fail, err: %v\n", err)
 			continue
 		}
+
 		go cmd(conn) //thread handle?
 	}
 }
