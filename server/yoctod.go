@@ -3,19 +3,29 @@ package main
 import (
 	"bytes"
 	"fmt"
-	"log"
 	"net"
 	"os"
 	"strconv"
 	"strings"
-	"yoctodb/storage"
+	"yocto/src/log"
+	"yocto/src/storage"
+
+	"github.com/Unknwon/goconfig"
 )
 
 var SERVICE_ADDR = "0.0.0.0:6180"
+var cfg goconfig.ConfigFile
 
 func init() {
-	log.SetFlags(log.Ldate | log.Lshortfile)
-	fmt.Printf("init system")
+	var logfile string
+	cfg, err := goconfig.LoadConfigFile("../data/yocto.cnf")
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		logfile, _ = cfg.GetValue("global", "logfile")
+	}
+	log.LogInit(logfile)
+	log.Info.Printf("init system")
 	go storage.StorageInit()
 }
 

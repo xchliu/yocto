@@ -5,6 +5,7 @@ import (
 	"os"
 	"path/filepath"
 	"time"
+	"yocto/src/log"
 )
 
 //main loop
@@ -24,8 +25,7 @@ func StorageInit() {
 		} else {
 			time.Sleep(time.Duration(1) * time.Second)
 		}
-
-		fmt.Printf("Redo buffer usage: %d / %d\n", len(REDOBUFFER), cap(REDOBUFFER))
+		log.Error.Printf("Redo buffer usage: %d / %d\n", len(REDOBUFFER), cap(REDOBUFFER))
 	}
 }
 
