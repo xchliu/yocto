@@ -1,4 +1,8 @@
 [global]
 debug=1
-datadir=/Users/xchliu/Documents/workspace/go/src/yocto/src/data
-logfile=/Users/xchliu/Documents/workspace/go/src/yocto/src/data/yocto.log
+datadir=/Users/xchliu/Documents/workspace/go/src/yocto/data
+logfile=/Users/xchliu/Documents/workspace/go/src/yocto/data/yocto.log
+
+
+[caches]
+table_open_cache=32

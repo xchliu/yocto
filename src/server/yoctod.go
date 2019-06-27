@@ -14,15 +14,15 @@ import (
 )
 
 var SERVICE_ADDR = "0.0.0.0:6180"
-var cfg goconfig.ConfigFile
+var CFG goconfig.ConfigFile
 
 func init() {
 	var logfile string
-	cfg, err := goconfig.LoadConfigFile("../data/yocto.cnf")
+	CFG, err := goconfig.LoadConfigFile("../../data/yocto.cnf")
 	if err != nil {
 		fmt.Println(err)
 	} else {
-		logfile, _ = cfg.GetValue("global", "logfile")
+		logfile, _ = CFG.GetValue("global", "logfile")
 	}
 	log.LogInit(logfile)
 	log.Info.Printf("init system")
