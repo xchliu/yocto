@@ -10,15 +10,17 @@ import (
 //main loop
 //init the memory tables
 //init log files
-var datadir string = "/Users/xchliu/Documents/workspace/yoctodb/yoctodb/data/"
 
 func StorageInit() {
 	log.Info.Printf("Storage init start...")
+	//buffer pools
+	go buffer_init()
 	//TODO init upto the config size with zero
 	//redo
 	go redo_loop()
 	//memtable
 	go memtable_loop()
+
 }
 
 func redo_loop() {
@@ -66,13 +68,14 @@ func (ior IORequest) save() {
 	if val, ok := MEMTABLE[ior.metadata]; ok {
 		val[ior.key] = ior.data
 	} else {
-		//TODO
+		//TODO block for free space
 		if len(MEMTABLE) == 32 {
 			log.Trace.Println("Table cache is null,wait for perge!")
 		} else {
 			MEMTABLE[ior.metadata][ior.key] = ior.data
 		}
 	}
+	return true
 }
 
 func (ior IORequest) get() {
