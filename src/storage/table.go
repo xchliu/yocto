@@ -14,7 +14,7 @@ type table struct {
 	define  string
 }
 
-func DDL_table(db string, name string, action string, define string) bool {
+func DDL_Table(db string, name string, action string, define string) bool {
 	var tb table
 	tb.name = name
 	tb.db = db
@@ -27,6 +27,15 @@ func DDL_table(db string, name string, action string, define string) bool {
 		return Create_table(tb)
 	}
 	return false
+}
+
+func DML_Table(db string, name string, data string) bool {
+	var ior IORequest
+	ior.data=data
+	ior.metadata=strings.Join([db,name],'.')
+	ior.iotype=1
+	ior.key=get_next_id(ior.metadata)
+	return ior.save()
 }
 
 func Create_table(tb table) bool {
@@ -48,4 +57,8 @@ func Create_table(tb table) bool {
 	}
 	obj_data.WriteString("")
 	return true
+}
+
+func Get_Table_Define(db string,name string){
+	cfg
 }

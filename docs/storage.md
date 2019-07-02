@@ -11,8 +11,15 @@ IO 主流程
 ##buffer 管理
 1.table cache 刷新	
 	
-##table
+#table
 表类型：内存缓存表 内存有序表 磁盘分级表（C0~Cn）
 
 ##memtable 结构
 [{db.table:[{key:value}]}
+##内存有序表
+##磁盘分级表
+
+#BUFFER管理
+##main buffer
+
+##table define

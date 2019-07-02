@@ -8,8 +8,8 @@ import (
 	"strconv"
 	"strings"
 	"yocto/src/log"
+	"yocto/src/parser/grammer/parser"
 	"yocto/src/storage"
-
 	"github.com/Unknwon/goconfig"
 )
 
@@ -42,8 +42,8 @@ func main() {
 			fmt.Printf("accept fail, err: %v\n", err)
 			continue
 		}
-
-		go cmd(conn) //thread handle?
+		//thread handle? use sync.pool
+		go cmd(conn) 
 	}
 }
 
@@ -100,7 +100,9 @@ func cmd_ddl(cmd string) bool {
 	case "database":
 		return storage.DDL_db(obj_name, obj_action)
 	case "table":
-		return storage.DDL_table(db, obj_name, obj_action, strings.Join(cmd_arrary[3:], ""))
+		return storage.DDL_Table()able(db, obj_name, obj_action, strings.Join(cmd_arrary[3:], ""))
+	case "insert":
+		return storage.DML_Table(db, obj_name, strings.Join(cmd_arrary[3:], ""))
 	default:
 		fmt.Println("Unknown type %s", obj_type)
 	}
