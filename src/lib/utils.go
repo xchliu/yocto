@@ -2,6 +2,7 @@ package lib
 
 import (
 	"fmt"
+	"reflect"
 	"runtime"
 	"strconv"
 	"strings"
@@ -22,4 +23,8 @@ func Goid() int {
 		panic(fmt.Sprintf("cannot get goroutine id: %v", err))
 	}
 	return id
+}
+
+func IsInstanceOf(objectPtr, typePtr interface{}) bool {
+	return reflect.TypeOf(objectPtr) == reflect.TypeOf(typePtr)
 }

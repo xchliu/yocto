@@ -93,3 +93,30 @@
         )
     )
 )
+
+
+(root
+    (sqlStatements
+        (sqlStatement
+            (ddlStatement
+                (createTable CREATE TABLE
+                    (tableName
+                        (fullId
+                            (uid
+                                (simpleId DB1)
+                            ) .T1
+                        )
+                    )
+                    (createDefinitions
+                        (
+                            (createDefinition
+                                (uid (simpleId C1))
+                                (columnDefinition
+                                    (dataType INT)
+                                    (columnConstraint PRIMARY KEY)
+                                    (columnConstraint COMMENT 'JEIHEI')
+                                )
+                            )
+                        )
+                    ) (tableOption ENGINE = (engineName INNODB)) (tableOption AUTO_INCREMENT = (decimalLiteral 6)) (tableOption DEFAULT CHARSET = (charsetName (charsetNameBase UTF8MB4))))))) <EOF>)
+
