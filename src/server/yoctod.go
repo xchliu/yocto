@@ -3,7 +3,6 @@ package main
 import (
 	"bytes"
 	"fmt"
-	"github.com/Unknwon/goconfig"
 	"net"
 	"os"
 	"strconv"
@@ -12,6 +11,8 @@ import (
 	"yocto/src/storage"
 	"yocto/src/yoctoparser"
 	"yocto/src/yoctoparser/grammer/parser"
+
+	"github.com/Unknwon/goconfig"
 )
 
 var SERVICE_ADDR = "0.0.0.0:6180"
@@ -19,7 +20,7 @@ var CFG goconfig.ConfigFile
 
 func init() {
 	var logfile string
-	CFG, err := goconfig.LoadConfigFile("/Users/spiswe/Documents/go_project/src/yocto/data/yocto.cnf")
+	CFG, err := goconfig.LoadConfigFile("../../data/yocto.cnf")
 	if err != nil {
 		fmt.Println(err)
 	} else {
@@ -43,8 +44,10 @@ func main() {
 			fmt.Printf("accept fail, err: %v\n", err)
 			continue
 		}
+
 		//thread handle? use sync.pool
 		go cmd(conn)
+		fmt.Println("Next loop")
 	}
 }
 
@@ -64,7 +67,9 @@ func cmd(conn net.Conn) {
 		buffer.WriteString("Result for ")
 		buffer.Write(buf[:n])
 		buffer.WriteString(strconv.FormatBool(cmd_parse(str)) + "\n")
+		buffer.WriteString(conn.RemoteAddr().String())
 		conn.Write(buffer.Bytes())
+		log.Trace.Println("Waiting for command .")
 	}
 }
 
