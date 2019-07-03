@@ -3,7 +3,7 @@ package yoctoparser
 import (
 	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
-	"yocto/src/parser/grammer/parser"
+	"yocto/src/yoctoparser/grammer/parser"
 )
 
 type CreateColumnDefine struct {

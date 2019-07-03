@@ -8,8 +8,8 @@ import (
 	"strconv"
 	"strings"
 	"yocto/src/log"
-	"yocto/src/parser/grammer/parser"
 	"yocto/src/storage"
+	"yocto/src/yoctoparser/grammer/parser"
 
 	"github.com/Unknwon/goconfig"
 )
@@ -68,14 +68,14 @@ func cmd(conn net.Conn) {
 	}
 }
 
-//TODO add the parser,and the cmd should be a json or parsetree
+//TODO add the yoctoparser,and the cmd should be a json or parsetree
 func cmd_parse(cmd string) bool {
 	cmd = strings.Replace(cmd, "\n", "", -1)
 	cmd = strings.Replace(cmd, ";", "", -1)
 	return cmd_run(cmd)
 }
 
-//TODO to be rebuild for parser
+//TODO to be rebuild for yoctoparser
 func cmd_run(cmd string) bool {
 	fmt.Println(cmd)
 	if strings.HasPrefix(cmd, "create") {
@@ -84,7 +84,7 @@ func cmd_run(cmd string) bool {
 	return true
 }
 
-//TODO to be rebuild for parser
+//TODO to be rebuild for yoctoparser
 func cmd_ddl(cmd string) bool {
 	fmt.Println(cmd)
 	cmd_arrary := strings.Split(cmd, " ")

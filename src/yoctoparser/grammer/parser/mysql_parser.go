@@ -5030,7 +5030,7 @@ const (
 type IRootContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsRootContext differentiates from other interfaces.
@@ -5158,7 +5158,7 @@ func (p *MySqlParser) Root() (localctx IRootContext) {
 type ISqlStatementsContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsSqlStatementsContext differentiates from other interfaces.
@@ -5398,7 +5398,7 @@ func (p *MySqlParser) SqlStatements() (localctx ISqlStatementsContext) {
 type ISqlStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsSqlStatementContext differentiates from other interfaces.
@@ -5603,7 +5603,7 @@ func (p *MySqlParser) SqlStatement() (localctx ISqlStatementContext) {
 type IEmptyStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsEmptyStatementContext differentiates from other interfaces.
@@ -5694,7 +5694,7 @@ func (p *MySqlParser) EmptyStatement() (localctx IEmptyStatementContext) {
 type IDdlStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsDdlStatementContext differentiates from other interfaces.
@@ -6341,7 +6341,7 @@ func (p *MySqlParser) DdlStatement() (localctx IDdlStatementContext) {
 type IDmlStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsDmlStatementContext differentiates from other interfaces.
@@ -6597,7 +6597,7 @@ func (p *MySqlParser) DmlStatement() (localctx IDmlStatementContext) {
 type ITransactionStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsTransactionStatementContext differentiates from other interfaces.
@@ -6836,7 +6836,7 @@ func (p *MySqlParser) TransactionStatement() (localctx ITransactionStatementCont
 type IReplicationStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsReplicationStatementContext differentiates from other interfaces.
@@ -7177,7 +7177,7 @@ func (p *MySqlParser) ReplicationStatement() (localctx IReplicationStatementCont
 type IPreparedStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsPreparedStatementContext differentiates from other interfaces.
@@ -7317,7 +7317,7 @@ func (p *MySqlParser) PreparedStatement() (localctx IPreparedStatementContext) {
 type ICompoundStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsCompoundStatementContext differentiates from other interfaces.
@@ -7556,7 +7556,7 @@ func (p *MySqlParser) CompoundStatement() (localctx ICompoundStatementContext) {
 type IAdministrationStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsAdministrationStatementContext differentiates from other interfaces.
@@ -8067,7 +8067,7 @@ func (p *MySqlParser) AdministrationStatement() (localctx IAdministrationStateme
 type IUtilityStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsUtilityStatementContext differentiates from other interfaces.
@@ -8221,7 +8221,7 @@ func (p *MySqlParser) UtilityStatement() (localctx IUtilityStatementContext) {
 type ICreateDatabaseContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetDbFormat returns the dbFormat token.
@@ -8422,7 +8422,7 @@ func (p *MySqlParser) CreateDatabase() (localctx ICreateDatabaseContext) {
 type ICreateIndexContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetIntimeAction returns the intimeAction token.
@@ -8854,7 +8854,7 @@ func (p *MySqlParser) CreateIndex() (localctx ICreateIndexContext) {
 type ICreateLogfileGroupContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetUndoFile returns the undoFile token.
@@ -9316,7 +9316,7 @@ func (p *MySqlParser) CreateLogfileGroup() (localctx ICreateLogfileGroupContext)
 type ICreateProcedureContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsCreateProcedureContext differentiates from other interfaces.
@@ -9578,7 +9578,7 @@ func (p *MySqlParser) CreateProcedure() (localctx ICreateProcedureContext) {
 type ICreateFunctionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsCreateFunctionContext differentiates from other interfaces.
@@ -9862,7 +9862,7 @@ func (p *MySqlParser) CreateFunction() (localctx ICreateFunctionContext) {
 type ICreateServerContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetWrapperName returns the wrapperName token.
@@ -10114,7 +10114,7 @@ func (p *MySqlParser) CreateServer() (localctx ICreateServerContext) {
 type ICreateTableContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsCreateTableContext differentiates from other interfaces.
@@ -10841,7 +10841,7 @@ func (p *MySqlParser) CreateTable() (localctx ICreateTableContext) {
 type ICreateTablespaceInnodbContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetDatafile returns the datafile token.
@@ -11092,7 +11092,7 @@ func (p *MySqlParser) CreateTablespaceInnodb() (localctx ICreateTablespaceInnodb
 type ICreateTablespaceNdbContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetDatafile returns the datafile token.
@@ -11622,7 +11622,7 @@ func (p *MySqlParser) CreateTablespaceNdb() (localctx ICreateTablespaceNdbContex
 type ICreateTriggerContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetTriggerTime returns the triggerTime token.
@@ -11984,7 +11984,7 @@ func (p *MySqlParser) CreateTrigger() (localctx ICreateTriggerContext) {
 type ICreateViewContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetAlgType returns the algType token.
@@ -12400,7 +12400,7 @@ func (p *MySqlParser) CreateView() (localctx ICreateViewContext) {
 type ICreateDatabaseOptionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsCreateDatabaseOptionContext differentiates from other interfaces.
@@ -12616,7 +12616,7 @@ func (p *MySqlParser) CreateDatabaseOption() (localctx ICreateDatabaseOptionCont
 type IOwnerStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsOwnerStatementContext differentiates from other interfaces.
@@ -12772,7 +12772,7 @@ func (p *MySqlParser) OwnerStatement() (localctx IOwnerStatementContext) {
 type ITimestampValueContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsTimestampValueContext differentiates from other interfaces.
@@ -12920,7 +12920,7 @@ func (p *MySqlParser) TimestampValue() (localctx ITimestampValueContext) {
 type IIntervalExprContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsIntervalExprContext differentiates from other interfaces.
@@ -13069,7 +13069,7 @@ func (p *MySqlParser) IntervalExpr() (localctx IIntervalExprContext) {
 type IIntervalTypeContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsIntervalTypeContext differentiates from other interfaces.
@@ -13307,7 +13307,7 @@ func (p *MySqlParser) IntervalType() (localctx IIntervalTypeContext) {
 type IEnableTypeContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsEnableTypeContext differentiates from other interfaces.
@@ -13438,7 +13438,7 @@ func (p *MySqlParser) EnableType() (localctx IEnableTypeContext) {
 type IIndexTypeContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsIndexTypeContext differentiates from other interfaces.
@@ -13549,7 +13549,7 @@ func (p *MySqlParser) IndexType() (localctx IIndexTypeContext) {
 type IIndexOptionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsIndexOptionContext differentiates from other interfaces.
@@ -13748,7 +13748,7 @@ func (p *MySqlParser) IndexOption() (localctx IIndexOptionContext) {
 type IProcedureParameterContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetDirection returns the direction token.
@@ -13908,7 +13908,7 @@ func (p *MySqlParser) ProcedureParameter() (localctx IProcedureParameterContext)
 type IFunctionParameterContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsFunctionParameterContext differentiates from other interfaces.
@@ -14019,7 +14019,7 @@ func (p *MySqlParser) FunctionParameter() (localctx IFunctionParameterContext) {
 type IRoutineOptionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsRoutineOptionContext differentiates from other interfaces.
@@ -14452,7 +14452,7 @@ func (p *MySqlParser) RoutineOption() (localctx IRoutineOptionContext) {
 type IServerOptionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsServerOptionContext differentiates from other interfaces.
@@ -14660,7 +14660,7 @@ func (p *MySqlParser) ServerOption() (localctx IServerOptionContext) {
 type ICreateDefinitionsContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsCreateDefinitionsContext differentiates from other interfaces.
@@ -14813,7 +14813,7 @@ func (p *MySqlParser) CreateDefinitions() (localctx ICreateDefinitionsContext) {
 type ICreateDefinitionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsCreateDefinitionContext differentiates from other interfaces.
@@ -15052,7 +15052,7 @@ func (p *MySqlParser) CreateDefinition() (localctx ICreateDefinitionContext) {
 type IColumnDefinitionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsColumnDefinitionContext differentiates from other interfaces.
@@ -15187,7 +15187,7 @@ func (p *MySqlParser) ColumnDefinition() (localctx IColumnDefinitionContext) {
 type IColumnConstraintContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsColumnConstraintContext differentiates from other interfaces.
@@ -16056,7 +16056,7 @@ func (p *MySqlParser) ColumnConstraint() (localctx IColumnConstraintContext) {
 type ITableConstraintContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsTableConstraintContext differentiates from other interfaces.
@@ -16831,7 +16831,7 @@ func (p *MySqlParser) TableConstraint() (localctx ITableConstraintContext) {
 type IReferenceDefinitionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetMatchType returns the matchType token.
@@ -17033,7 +17033,7 @@ func (p *MySqlParser) ReferenceDefinition() (localctx IReferenceDefinitionContex
 type IReferenceActionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetOnDelete returns the onDelete rule contexts.
@@ -17258,7 +17258,7 @@ func (p *MySqlParser) ReferenceAction() (localctx IReferenceActionContext) {
 type IReferenceControlTypeContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsReferenceControlTypeContext differentiates from other interfaces.
@@ -17407,7 +17407,7 @@ func (p *MySqlParser) ReferenceControlType() (localctx IReferenceControlTypeCont
 type IIndexColumnDefinitionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsIndexColumnDefinitionContext differentiates from other interfaces.
@@ -17810,7 +17810,7 @@ func (p *MySqlParser) IndexColumnDefinition() (localctx IIndexColumnDefinitionCo
 type ITableOptionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsTableOptionContext differentiates from other interfaces.
@@ -19897,7 +19897,7 @@ func (p *MySqlParser) TableOption() (localctx ITableOptionContext) {
 type ITablespaceStorageContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsTablespaceStorageContext differentiates from other interfaces.
@@ -20012,7 +20012,7 @@ func (p *MySqlParser) TablespaceStorage() (localctx ITablespaceStorageContext) {
 type IPartitionDefinitionsContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetCount returns the count rule contexts.
@@ -20327,7 +20327,7 @@ func (p *MySqlParser) PartitionDefinitions() (localctx IPartitionDefinitionsCont
 type IPartitionFunctionDefinitionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsPartitionFunctionDefinitionContext differentiates from other interfaces.
@@ -20860,7 +20860,7 @@ func (p *MySqlParser) PartitionFunctionDefinition() (localctx IPartitionFunction
 type ISubpartitionFunctionDefinitionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsSubpartitionFunctionDefinitionContext differentiates from other interfaces.
@@ -21167,7 +21167,7 @@ func (p *MySqlParser) SubpartitionFunctionDefinition() (localctx ISubpartitionFu
 type IPartitionDefinitionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsPartitionDefinitionContext differentiates from other interfaces.
@@ -22180,7 +22180,7 @@ func (p *MySqlParser) PartitionDefinition() (localctx IPartitionDefinitionContex
 type IPartitionDefinerAtomContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsPartitionDefinerAtomContext differentiates from other interfaces.
@@ -22311,7 +22311,7 @@ func (p *MySqlParser) PartitionDefinerAtom() (localctx IPartitionDefinerAtomCont
 type IPartitionDefinerVectorContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsPartitionDefinerVectorContext differentiates from other interfaces.
@@ -22464,7 +22464,7 @@ func (p *MySqlParser) PartitionDefinerVector() (localctx IPartitionDefinerVector
 type ISubpartitionDefinitionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsSubpartitionDefinitionContext differentiates from other interfaces.
@@ -22607,7 +22607,7 @@ func (p *MySqlParser) SubpartitionDefinition() (localctx ISubpartitionDefinition
 type IPartitionOptionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsPartitionOptionContext differentiates from other interfaces.
@@ -23328,7 +23328,7 @@ func (p *MySqlParser) PartitionOption() (localctx IPartitionOptionContext) {
 type IAlterDatabaseContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsAlterDatabaseContext differentiates from other interfaces.
@@ -23656,7 +23656,7 @@ func (p *MySqlParser) AlterDatabase() (localctx IAlterDatabaseContext) {
 type IAlterFunctionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsAlterFunctionContext differentiates from other interfaces.
@@ -23807,7 +23807,7 @@ func (p *MySqlParser) AlterFunction() (localctx IAlterFunctionContext) {
 type IAlterInstanceContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsAlterInstanceContext differentiates from other interfaces.
@@ -23938,7 +23938,7 @@ func (p *MySqlParser) AlterInstance() (localctx IAlterInstanceContext) {
 type IAlterLogfileGroupContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsAlterLogfileGroupContext differentiates from other interfaces.
@@ -24180,7 +24180,7 @@ func (p *MySqlParser) AlterLogfileGroup() (localctx IAlterLogfileGroupContext) {
 type IAlterProcedureContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsAlterProcedureContext differentiates from other interfaces.
@@ -24331,7 +24331,7 @@ func (p *MySqlParser) AlterProcedure() (localctx IAlterProcedureContext) {
 type IAlterServerContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsAlterServerContext differentiates from other interfaces.
@@ -24522,7 +24522,7 @@ func (p *MySqlParser) AlterServer() (localctx IAlterServerContext) {
 type IAlterTableContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetIntimeAction returns the intimeAction token.
@@ -24775,7 +24775,7 @@ func (p *MySqlParser) AlterTable() (localctx IAlterTableContext) {
 type IAlterTablespaceContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetObjectAction returns the objectAction token.
@@ -25031,7 +25031,7 @@ func (p *MySqlParser) AlterTablespace() (localctx IAlterTablespaceContext) {
 type IAlterViewContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetAlgType returns the algType token.
@@ -25424,7 +25424,7 @@ func (p *MySqlParser) AlterView() (localctx IAlterViewContext) {
 type IAlterSpecificationContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsAlterSpecificationContext differentiates from other interfaces.
@@ -30089,7 +30089,7 @@ func (p *MySqlParser) AlterSpecification() (localctx IAlterSpecificationContext)
 type IDropDatabaseContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetDbFormat returns the dbFormat token.
@@ -30253,7 +30253,7 @@ func (p *MySqlParser) DropDatabase() (localctx IDropDatabaseContext) {
 type IDropEventContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsDropEventContext differentiates from other interfaces.
@@ -30388,7 +30388,7 @@ func (p *MySqlParser) DropEvent() (localctx IDropEventContext) {
 type IDropIndexContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetIntimeAction returns the intimeAction token.
@@ -30712,7 +30712,7 @@ func (p *MySqlParser) DropIndex() (localctx IDropIndexContext) {
 type IDropLogfileGroupContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsDropLogfileGroupContext differentiates from other interfaces.
@@ -30863,7 +30863,7 @@ func (p *MySqlParser) DropLogfileGroup() (localctx IDropLogfileGroupContext) {
 type IDropProcedureContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsDropProcedureContext differentiates from other interfaces.
@@ -30998,7 +30998,7 @@ func (p *MySqlParser) DropProcedure() (localctx IDropProcedureContext) {
 type IDropFunctionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsDropFunctionContext differentiates from other interfaces.
@@ -31133,7 +31133,7 @@ func (p *MySqlParser) DropFunction() (localctx IDropFunctionContext) {
 type IDropServerContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsDropServerContext differentiates from other interfaces.
@@ -31268,7 +31268,7 @@ func (p *MySqlParser) DropServer() (localctx IDropServerContext) {
 type IDropTableContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetDropType returns the dropType token.
@@ -31462,7 +31462,7 @@ func (p *MySqlParser) DropTable() (localctx IDropTableContext) {
 type IDropTablespaceContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsDropTablespaceContext differentiates from other interfaces.
@@ -31620,7 +31620,7 @@ func (p *MySqlParser) DropTablespace() (localctx IDropTablespaceContext) {
 type IDropTriggerContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsDropTriggerContext differentiates from other interfaces.
@@ -31755,7 +31755,7 @@ func (p *MySqlParser) DropTrigger() (localctx IDropTriggerContext) {
 type IDropViewContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetDropType returns the dropType token.
@@ -31973,7 +31973,7 @@ func (p *MySqlParser) DropView() (localctx IDropViewContext) {
 type IRenameTableContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsRenameTableContext differentiates from other interfaces.
@@ -32126,7 +32126,7 @@ func (p *MySqlParser) RenameTable() (localctx IRenameTableContext) {
 type IRenameTableClauseContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsRenameTableClauseContext differentiates from other interfaces.
@@ -32248,7 +32248,7 @@ func (p *MySqlParser) RenameTableClause() (localctx IRenameTableClauseContext) {
 type ITruncateTableContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsTruncateTableContext differentiates from other interfaces.
@@ -32369,7 +32369,7 @@ func (p *MySqlParser) TruncateTable() (localctx ITruncateTableContext) {
 type ICallStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsCallStatementContext differentiates from other interfaces.
@@ -32532,7 +32532,7 @@ func (p *MySqlParser) CallStatement() (localctx ICallStatementContext) {
 type IDeleteStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsDeleteStatementContext differentiates from other interfaces.
@@ -32652,7 +32652,7 @@ func (p *MySqlParser) DeleteStatement() (localctx IDeleteStatementContext) {
 type IDoStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsDoStatementContext differentiates from other interfaces.
@@ -32757,7 +32757,7 @@ func (p *MySqlParser) DoStatement() (localctx IDoStatementContext) {
 type IHandlerStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsHandlerStatementContext differentiates from other interfaces.
@@ -32911,7 +32911,7 @@ func (p *MySqlParser) HandlerStatement() (localctx IHandlerStatementContext) {
 type IInsertStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetPriority returns the priority token.
@@ -33427,7 +33427,7 @@ func (p *MySqlParser) InsertStatement() (localctx IInsertStatementContext) {
 type ILoadDataStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetPriority returns the priority token.
@@ -34119,7 +34119,7 @@ func (p *MySqlParser) LoadDataStatement() (localctx ILoadDataStatementContext) {
 type ILoadXmlStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetPriority returns the priority token.
@@ -34702,7 +34702,7 @@ func (p *MySqlParser) LoadXmlStatement() (localctx ILoadXmlStatementContext) {
 type IReplaceStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetPriority returns the priority token.
@@ -35107,7 +35107,7 @@ func (p *MySqlParser) ReplaceStatement() (localctx IReplaceStatementContext) {
 type ISelectStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsSelectStatementContext differentiates from other interfaces.
@@ -35787,7 +35787,7 @@ func (p *MySqlParser) SelectStatement() (localctx ISelectStatementContext) {
 type IUpdateStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsUpdateStatementContext differentiates from other interfaces.
@@ -35907,7 +35907,7 @@ func (p *MySqlParser) UpdateStatement() (localctx IUpdateStatementContext) {
 type IInsertStatementValueContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetInsertFormat returns the insertFormat token.
@@ -36139,7 +36139,7 @@ func (p *MySqlParser) InsertStatementValue() (localctx IInsertStatementValueCont
 type IUpdatedElementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsUpdatedElementContext differentiates from other interfaces.
@@ -36277,7 +36277,7 @@ func (p *MySqlParser) UpdatedElement() (localctx IUpdatedElementContext) {
 type IAssignmentFieldContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsAssignmentFieldContext differentiates from other interfaces.
@@ -36394,7 +36394,7 @@ func (p *MySqlParser) AssignmentField() (localctx IAssignmentFieldContext) {
 type ILockClauseContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsLockClauseContext differentiates from other interfaces.
@@ -36537,7 +36537,7 @@ func (p *MySqlParser) LockClause() (localctx ILockClauseContext) {
 type ISingleDeleteStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetPriority returns the priority token.
@@ -36834,7 +36834,7 @@ func (p *MySqlParser) SingleDeleteStatement() (localctx ISingleDeleteStatementCo
 type IMultipleDeleteStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetPriority returns the priority token.
@@ -37213,7 +37213,7 @@ func (p *MySqlParser) MultipleDeleteStatement() (localctx IMultipleDeleteStateme
 type IHandlerOpenStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsHandlerOpenStatementContext differentiates from other interfaces.
@@ -37362,7 +37362,7 @@ func (p *MySqlParser) HandlerOpenStatement() (localctx IHandlerOpenStatementCont
 type IHandlerReadIndexStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetMoveOrder returns the moveOrder token.
@@ -37662,7 +37662,7 @@ func (p *MySqlParser) HandlerReadIndexStatement() (localctx IHandlerReadIndexSta
 type IHandlerReadStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetMoveOrder returns the moveOrder token.
@@ -37871,7 +37871,7 @@ func (p *MySqlParser) HandlerReadStatement() (localctx IHandlerReadStatementCont
 type IHandlerCloseStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsHandlerCloseStatementContext differentiates from other interfaces.
@@ -37984,7 +37984,7 @@ func (p *MySqlParser) HandlerCloseStatement() (localctx IHandlerCloseStatementCo
 type ISingleUpdateStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetPriority returns the priority token.
@@ -38302,7 +38302,7 @@ func (p *MySqlParser) SingleUpdateStatement() (localctx ISingleUpdateStatementCo
 type IMultipleUpdateStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetPriority returns the priority token.
@@ -38542,7 +38542,7 @@ func (p *MySqlParser) MultipleUpdateStatement() (localctx IMultipleUpdateStateme
 type IOrderByClauseContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsOrderByClauseContext differentiates from other interfaces.
@@ -38695,7 +38695,7 @@ func (p *MySqlParser) OrderByClause() (localctx IOrderByClauseContext) {
 type IOrderByExpressionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetOrder returns the order token.
@@ -38836,7 +38836,7 @@ func (p *MySqlParser) OrderByExpression() (localctx IOrderByExpressionContext) {
 type ITableSourcesContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsTableSourcesContext differentiates from other interfaces.
@@ -38973,7 +38973,7 @@ func (p *MySqlParser) TableSources() (localctx ITableSourcesContext) {
 type ITableSourceContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsTableSourceContext differentiates from other interfaces.
@@ -39242,7 +39242,7 @@ func (p *MySqlParser) TableSource() (localctx ITableSourceContext) {
 type ITableSourceItemContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsTableSourceItemContext differentiates from other interfaces.
@@ -39709,7 +39709,7 @@ func (p *MySqlParser) TableSourceItem() (localctx ITableSourceItemContext) {
 type IIndexHintContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetIndexHintAction returns the indexHintAction token.
@@ -39930,7 +39930,7 @@ func (p *MySqlParser) IndexHint() (localctx IIndexHintContext) {
 type IIndexHintTypeContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsIndexHintTypeContext differentiates from other interfaces.
@@ -40064,7 +40064,7 @@ func (p *MySqlParser) IndexHintType() (localctx IIndexHintTypeContext) {
 type IJoinPartContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsJoinPartContext differentiates from other interfaces.
@@ -40646,7 +40646,7 @@ func (p *MySqlParser) JoinPart() (localctx IJoinPartContext) {
 type IQueryExpressionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsQueryExpressionContext differentiates from other interfaces.
@@ -40790,7 +40790,7 @@ func (p *MySqlParser) QueryExpression() (localctx IQueryExpressionContext) {
 type IQueryExpressionNointoContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsQueryExpressionNointoContext differentiates from other interfaces.
@@ -40934,7 +40934,7 @@ func (p *MySqlParser) QueryExpressionNointo() (localctx IQueryExpressionNointoCo
 type IQuerySpecificationContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsQuerySpecificationContext differentiates from other interfaces.
@@ -41238,7 +41238,7 @@ func (p *MySqlParser) QuerySpecification() (localctx IQuerySpecificationContext)
 type IQuerySpecificationNointoContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsQuerySpecificationNointoContext differentiates from other interfaces.
@@ -41446,7 +41446,7 @@ func (p *MySqlParser) QuerySpecificationNointo() (localctx IQuerySpecificationNo
 type IUnionParenthesisContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetUnionType returns the unionType token.
@@ -41596,7 +41596,7 @@ func (p *MySqlParser) UnionParenthesis() (localctx IUnionParenthesisContext) {
 type IUnionStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetUnionType returns the unionType token.
@@ -41771,7 +41771,7 @@ func (p *MySqlParser) UnionStatement() (localctx IUnionStatementContext) {
 type ISelectSpecContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsSelectSpecContext differentiates from other interfaces.
@@ -41975,7 +41975,7 @@ func (p *MySqlParser) SelectSpec() (localctx ISelectSpecContext) {
 type ISelectElementsContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetStar returns the star token.
@@ -42145,7 +42145,7 @@ func (p *MySqlParser) SelectElements() (localctx ISelectElementsContext) {
 type ISelectElementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsSelectElementContext differentiates from other interfaces.
@@ -42559,7 +42559,7 @@ func (p *MySqlParser) SelectElement() (localctx ISelectElementContext) {
 type ISelectIntoExpressionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsSelectIntoExpressionContext differentiates from other interfaces.
@@ -43028,7 +43028,7 @@ func (p *MySqlParser) SelectIntoExpression() (localctx ISelectIntoExpressionCont
 type ISelectFieldsIntoContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetTerminationField returns the terminationField token.
@@ -43240,7 +43240,7 @@ func (p *MySqlParser) SelectFieldsInto() (localctx ISelectFieldsIntoContext) {
 type ISelectLinesIntoContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetStarting returns the starting token.
@@ -43403,7 +43403,7 @@ func (p *MySqlParser) SelectLinesInto() (localctx ISelectLinesIntoContext) {
 type IFromClauseContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetWhereExpr returns the whereExpr rule contexts.
@@ -43696,7 +43696,7 @@ func (p *MySqlParser) FromClause() (localctx IFromClauseContext) {
 type IGroupByItemContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetOrder returns the order token.
@@ -43837,7 +43837,7 @@ func (p *MySqlParser) GroupByItem() (localctx IGroupByItemContext) {
 type ILimitClauseContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetOffset returns the offset rule contexts.
@@ -44031,7 +44031,7 @@ func (p *MySqlParser) LimitClause() (localctx ILimitClauseContext) {
 type ILimitClauseAtomContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsLimitClauseAtomContext differentiates from other interfaces.
@@ -44154,7 +44154,7 @@ func (p *MySqlParser) LimitClauseAtom() (localctx ILimitClauseAtomContext) {
 type IStartTransactionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsStartTransactionContext differentiates from other interfaces.
@@ -44314,7 +44314,7 @@ func (p *MySqlParser) StartTransaction() (localctx IStartTransactionContext) {
 type IBeginWorkContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsBeginWorkContext differentiates from other interfaces.
@@ -44421,7 +44421,7 @@ func (p *MySqlParser) BeginWork() (localctx IBeginWorkContext) {
 type ICommitWorkContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetNochain returns the nochain token.
@@ -44623,7 +44623,7 @@ func (p *MySqlParser) CommitWork() (localctx ICommitWorkContext) {
 type IRollbackWorkContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetNochain returns the nochain token.
@@ -44825,7 +44825,7 @@ func (p *MySqlParser) RollbackWork() (localctx IRollbackWorkContext) {
 type ISavepointStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsSavepointStatementContext differentiates from other interfaces.
@@ -44930,7 +44930,7 @@ func (p *MySqlParser) SavepointStatement() (localctx ISavepointStatementContext)
 type IRollbackStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsRollbackStatementContext differentiates from other interfaces.
@@ -45073,7 +45073,7 @@ func (p *MySqlParser) RollbackStatement() (localctx IRollbackStatementContext) {
 type IReleaseStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsReleaseStatementContext differentiates from other interfaces.
@@ -45186,7 +45186,7 @@ func (p *MySqlParser) ReleaseStatement() (localctx IReleaseStatementContext) {
 type ILockTablesContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsLockTablesContext differentiates from other interfaces.
@@ -45339,7 +45339,7 @@ func (p *MySqlParser) LockTables() (localctx ILockTablesContext) {
 type IUnlockTablesContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsUnlockTablesContext differentiates from other interfaces.
@@ -45438,7 +45438,7 @@ func (p *MySqlParser) UnlockTables() (localctx IUnlockTablesContext) {
 type ISetAutocommitStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetAutocommitValue returns the autocommitValue token.
@@ -45583,7 +45583,7 @@ func (p *MySqlParser) SetAutocommitStatement() (localctx ISetAutocommitStatement
 type ISetTransactionStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetTransactionContext returns the transactionContext token.
@@ -45784,7 +45784,7 @@ func (p *MySqlParser) SetTransactionStatement() (localctx ISetTransactionStateme
 type ITransactionModeContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsTransactionModeContext differentiates from other interfaces.
@@ -45931,7 +45931,7 @@ func (p *MySqlParser) TransactionMode() (localctx ITransactionModeContext) {
 type ILockTableElementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsLockTableElementContext differentiates from other interfaces.
@@ -46079,7 +46079,7 @@ func (p *MySqlParser) LockTableElement() (localctx ILockTableElementContext) {
 type ILockActionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsLockActionContext differentiates from other interfaces.
@@ -46221,7 +46221,7 @@ func (p *MySqlParser) LockAction() (localctx ILockActionContext) {
 type ITransactionOptionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsTransactionOptionContext differentiates from other interfaces.
@@ -46374,7 +46374,7 @@ func (p *MySqlParser) TransactionOption() (localctx ITransactionOptionContext) {
 type ITransactionLevelContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsTransactionLevelContext differentiates from other interfaces.
@@ -46520,7 +46520,7 @@ func (p *MySqlParser) TransactionLevel() (localctx ITransactionLevelContext) {
 type IChangeMasterContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsChangeMasterContext differentiates from other interfaces.
@@ -46702,7 +46702,7 @@ func (p *MySqlParser) ChangeMaster() (localctx IChangeMasterContext) {
 type IChangeReplicationFilterContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsChangeReplicationFilterContext differentiates from other interfaces.
@@ -46863,7 +46863,7 @@ func (p *MySqlParser) ChangeReplicationFilter() (localctx IChangeReplicationFilt
 type IPurgeBinaryLogsContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetPurgeFormat returns the purgeFormat token.
@@ -47067,7 +47067,7 @@ func (p *MySqlParser) PurgeBinaryLogs() (localctx IPurgeBinaryLogsContext) {
 type IResetMasterContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsResetMasterContext differentiates from other interfaces.
@@ -47166,7 +47166,7 @@ func (p *MySqlParser) ResetMaster() (localctx IResetMasterContext) {
 type IResetSlaveContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsResetSlaveContext differentiates from other interfaces.
@@ -47302,7 +47302,7 @@ func (p *MySqlParser) ResetSlave() (localctx IResetSlaveContext) {
 type IStartSlaveContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsStartSlaveContext differentiates from other interfaces.
@@ -47549,7 +47549,7 @@ func (p *MySqlParser) StartSlave() (localctx IStartSlaveContext) {
 type IStopSlaveContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsStopSlaveContext differentiates from other interfaces.
@@ -47709,7 +47709,7 @@ func (p *MySqlParser) StopSlave() (localctx IStopSlaveContext) {
 type IStartGroupReplicationContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsStartGroupReplicationContext differentiates from other interfaces.
@@ -47808,7 +47808,7 @@ func (p *MySqlParser) StartGroupReplication() (localctx IStartGroupReplicationCo
 type IStopGroupReplicationContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsStopGroupReplicationContext differentiates from other interfaces.
@@ -47907,7 +47907,7 @@ func (p *MySqlParser) StopGroupReplication() (localctx IStopGroupReplicationCont
 type IMasterOptionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsMasterOptionContext differentiates from other interfaces.
@@ -48394,7 +48394,7 @@ func (p *MySqlParser) MasterOption() (localctx IMasterOptionContext) {
 type IStringMasterOptionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsStringMasterOptionContext differentiates from other interfaces.
@@ -48545,7 +48545,7 @@ func (p *MySqlParser) StringMasterOption() (localctx IStringMasterOptionContext)
 type IDecimalMasterOptionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsDecimalMasterOptionContext differentiates from other interfaces.
@@ -48664,7 +48664,7 @@ func (p *MySqlParser) DecimalMasterOption() (localctx IDecimalMasterOptionContex
 type IBoolMasterOptionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsBoolMasterOptionContext differentiates from other interfaces.
@@ -48771,7 +48771,7 @@ func (p *MySqlParser) BoolMasterOption() (localctx IBoolMasterOptionContext) {
 type IChannelOptionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsChannelOptionContext differentiates from other interfaces.
@@ -48878,7 +48878,7 @@ func (p *MySqlParser) ChannelOption() (localctx IChannelOptionContext) {
 type IReplicationFilterContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsReplicationFilterContext differentiates from other interfaces.
@@ -49559,7 +49559,7 @@ func (p *MySqlParser) ReplicationFilter() (localctx IReplicationFilterContext) {
 type ITablePairContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetFirstTable returns the firstTable rule contexts.
@@ -49725,7 +49725,7 @@ func (p *MySqlParser) TablePair() (localctx ITablePairContext) {
 type IThreadTypeContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsThreadTypeContext differentiates from other interfaces.
@@ -49828,7 +49828,7 @@ func (p *MySqlParser) ThreadType() (localctx IThreadTypeContext) {
 type IUntilOptionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsUntilOptionContext differentiates from other interfaces.
@@ -50231,7 +50231,7 @@ func (p *MySqlParser) UntilOption() (localctx IUntilOptionContext) {
 type IConnectionOptionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsConnectionOptionContext differentiates from other interfaces.
@@ -50576,7 +50576,7 @@ func (p *MySqlParser) ConnectionOption() (localctx IConnectionOptionContext) {
 type IGtuidSetContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsGtuidSetContext differentiates from other interfaces.
@@ -50733,7 +50733,7 @@ func (p *MySqlParser) GtuidSet() (localctx IGtuidSetContext) {
 type IXaStartTransactionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetXaStart returns the xaStart token.
@@ -50920,7 +50920,7 @@ func (p *MySqlParser) XaStartTransaction() (localctx IXaStartTransactionContext)
 type IXaEndTransactionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsXaEndTransactionContext differentiates from other interfaces.
@@ -51072,7 +51072,7 @@ func (p *MySqlParser) XaEndTransaction() (localctx IXaEndTransactionContext) {
 type IXaPrepareStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsXaPrepareStatementContext differentiates from other interfaces.
@@ -51185,7 +51185,7 @@ func (p *MySqlParser) XaPrepareStatement() (localctx IXaPrepareStatementContext)
 type IXaCommitWorkContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsXaCommitWorkContext differentiates from other interfaces.
@@ -51322,7 +51322,7 @@ func (p *MySqlParser) XaCommitWork() (localctx IXaCommitWorkContext) {
 type IXaRollbackWorkContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsXaRollbackWorkContext differentiates from other interfaces.
@@ -51435,7 +51435,7 @@ func (p *MySqlParser) XaRollbackWork() (localctx IXaRollbackWorkContext) {
 type IXaRecoverWorkContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsXaRecoverWorkContext differentiates from other interfaces.
@@ -51564,7 +51564,7 @@ func (p *MySqlParser) XaRecoverWork() (localctx IXaRecoverWorkContext) {
 type IPrepareStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetQuery returns the query token.
@@ -51732,7 +51732,7 @@ func (p *MySqlParser) PrepareStatement() (localctx IPrepareStatementContext) {
 type IExecuteStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsExecuteStatementContext differentiates from other interfaces.
@@ -51867,7 +51867,7 @@ func (p *MySqlParser) ExecuteStatement() (localctx IExecuteStatementContext) {
 type IDeallocatePrepareContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetDropFormat returns the dropFormat token.
@@ -52010,7 +52010,7 @@ func (p *MySqlParser) DeallocatePrepare() (localctx IDeallocatePrepareContext) {
 type IRoutineBodyContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsRoutineBodyContext differentiates from other interfaces.
@@ -52107,7 +52107,7 @@ func (p *MySqlParser) RoutineBody() (localctx IRoutineBodyContext) {
 type ICaseStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsCaseStatementContext differentiates from other interfaces.
@@ -52347,7 +52347,7 @@ func (p *MySqlParser) CaseStatement() (localctx ICaseStatementContext) {
 type IIfStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// Get_procedureSqlStatement returns the _procedureSqlStatement rule contexts.
@@ -52645,7 +52645,7 @@ func (p *MySqlParser) IfStatement() (localctx IIfStatementContext) {
 type IIterateStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsIterateStatementContext differentiates from other interfaces.
@@ -52750,7 +52750,7 @@ func (p *MySqlParser) IterateStatement() (localctx IIterateStatementContext) {
 type ILeaveStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsLeaveStatementContext differentiates from other interfaces.
@@ -52855,7 +52855,7 @@ func (p *MySqlParser) LeaveStatement() (localctx ILeaveStatementContext) {
 type ILoopStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsLoopStatementContext differentiates from other interfaces.
@@ -53060,7 +53060,7 @@ func (p *MySqlParser) LoopStatement() (localctx ILoopStatementContext) {
 type IRepeatStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsRepeatStatementContext differentiates from other interfaces.
@@ -53287,7 +53287,7 @@ func (p *MySqlParser) RepeatStatement() (localctx IRepeatStatementContext) {
 type IReturnStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsReturnStatementContext differentiates from other interfaces.
@@ -53392,7 +53392,7 @@ func (p *MySqlParser) ReturnStatement() (localctx IReturnStatementContext) {
 type IWhileStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsWhileStatementContext differentiates from other interfaces.
@@ -53619,7 +53619,7 @@ func (p *MySqlParser) WhileStatement() (localctx IWhileStatementContext) {
 type ICursorStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsCursorStatementContext differentiates from other interfaces.
@@ -53920,7 +53920,7 @@ func (p *MySqlParser) CursorStatement() (localctx ICursorStatementContext) {
 type IDeclareVariableContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsDeclareVariableContext differentiates from other interfaces.
@@ -54069,7 +54069,7 @@ func (p *MySqlParser) DeclareVariable() (localctx IDeclareVariableContext) {
 type IDeclareConditionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsDeclareConditionContext differentiates from other interfaces.
@@ -54247,7 +54247,7 @@ func (p *MySqlParser) DeclareCondition() (localctx IDeclareConditionContext) {
 type IDeclareCursorContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsDeclareCursorContext differentiates from other interfaces.
@@ -54382,7 +54382,7 @@ func (p *MySqlParser) DeclareCursor() (localctx IDeclareCursorContext) {
 type IDeclareHandlerContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetHandlerAction returns the handlerAction token.
@@ -54598,7 +54598,7 @@ func (p *MySqlParser) DeclareHandler() (localctx IDeclareHandlerContext) {
 type IHandlerConditionValueContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsHandlerConditionValueContext differentiates from other interfaces.
@@ -54975,7 +54975,7 @@ func (p *MySqlParser) HandlerConditionValue() (localctx IHandlerConditionValueCo
 type IProcedureSqlStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsProcedureSqlStatementContext differentiates from other interfaces.
@@ -55102,7 +55102,7 @@ func (p *MySqlParser) ProcedureSqlStatement() (localctx IProcedureSqlStatementCo
 type ICaseAlternativeContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsCaseAlternativeContext differentiates from other interfaces.
@@ -55281,7 +55281,7 @@ func (p *MySqlParser) CaseAlternative() (localctx ICaseAlternativeContext) {
 type IElifAlternativeContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsElifAlternativeContext differentiates from other interfaces.
@@ -55438,7 +55438,7 @@ func (p *MySqlParser) ElifAlternative() (localctx IElifAlternativeContext) {
 type IAlterUserContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsAlterUserContext differentiates from other interfaces.
@@ -55973,7 +55973,7 @@ func (p *MySqlParser) AlterUser() (localctx IAlterUserContext) {
 type ICreateUserContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsCreateUserContext differentiates from other interfaces.
@@ -56508,7 +56508,7 @@ func (p *MySqlParser) CreateUser() (localctx ICreateUserContext) {
 type IDropUserContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsDropUserContext differentiates from other interfaces.
@@ -56682,7 +56682,7 @@ func (p *MySqlParser) DropUser() (localctx IDropUserContext) {
 type IGrantStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetPrivilegeObject returns the privilegeObject token.
@@ -57144,7 +57144,7 @@ func (p *MySqlParser) GrantStatement() (localctx IGrantStatementContext) {
 type IGrantProxyContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetFromFirst returns the fromFirst rule contexts.
@@ -57402,7 +57402,7 @@ func (p *MySqlParser) GrantProxy() (localctx IGrantProxyContext) {
 type IRenameUserContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsRenameUserContext differentiates from other interfaces.
@@ -57555,7 +57555,7 @@ func (p *MySqlParser) RenameUser() (localctx IRenameUserContext) {
 type IRevokeStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsRevokeStatementContext differentiates from other interfaces.
@@ -57991,7 +57991,7 @@ func (p *MySqlParser) RevokeStatement() (localctx IRevokeStatementContext) {
 type IRevokeProxyContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetOnUser returns the onUser rule contexts.
@@ -58218,7 +58218,7 @@ func (p *MySqlParser) RevokeProxy() (localctx IRevokeProxyContext) {
 type ISetPasswordStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsSetPasswordStatementContext differentiates from other interfaces.
@@ -58388,7 +58388,7 @@ func (p *MySqlParser) SetPasswordStatement() (localctx ISetPasswordStatementCont
 type IUserSpecificationContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsUserSpecificationContext differentiates from other interfaces.
@@ -58499,7 +58499,7 @@ func (p *MySqlParser) UserSpecification() (localctx IUserSpecificationContext) {
 type IUserAuthOptionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsUserAuthOptionContext differentiates from other interfaces.
@@ -58916,7 +58916,7 @@ func (p *MySqlParser) UserAuthOption() (localctx IUserAuthOptionContext) {
 type ITlsOptionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsTlsOptionContext differentiates from other interfaces.
@@ -59076,7 +59076,7 @@ func (p *MySqlParser) TlsOption() (localctx ITlsOptionContext) {
 type IUserResourceOptionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsUserResourceOptionContext differentiates from other interfaces.
@@ -59235,7 +59235,7 @@ func (p *MySqlParser) UserResourceOption() (localctx IUserResourceOptionContext)
 type IUserPasswordOptionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetExpireType returns the expireType token.
@@ -59414,7 +59414,7 @@ func (p *MySqlParser) UserPasswordOption() (localctx IUserPasswordOptionContext)
 type IUserLockOptionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetLockType returns the lockType token.
@@ -59543,7 +59543,7 @@ func (p *MySqlParser) UserLockOption() (localctx IUserLockOptionContext) {
 type IPrivelegeClauseContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsPrivelegeClauseContext differentiates from other interfaces.
@@ -59678,7 +59678,7 @@ func (p *MySqlParser) PrivelegeClause() (localctx IPrivelegeClauseContext) {
 type IPrivilegeContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsPrivilegeContext differentiates from other interfaces.
@@ -60170,7 +60170,7 @@ func (p *MySqlParser) Privilege() (localctx IPrivilegeContext) {
 type IPrivilegeLevelContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsPrivilegeLevelContext differentiates from other interfaces.
@@ -60533,7 +60533,7 @@ func (p *MySqlParser) PrivilegeLevel() (localctx IPrivilegeLevelContext) {
 type IRenameUserClauseContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetFromFirst returns the fromFirst rule contexts.
@@ -60683,7 +60683,7 @@ func (p *MySqlParser) RenameUserClause() (localctx IRenameUserClauseContext) {
 type IAnalyzeTableContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetActionOption returns the actionOption token.
@@ -60841,7 +60841,7 @@ func (p *MySqlParser) AnalyzeTable() (localctx IAnalyzeTableContext) {
 type ICheckTableContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsCheckTableContext differentiates from other interfaces.
@@ -60992,7 +60992,7 @@ func (p *MySqlParser) CheckTable() (localctx ICheckTableContext) {
 type IChecksumTableContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetActionOption returns the actionOption token.
@@ -61150,7 +61150,7 @@ func (p *MySqlParser) ChecksumTable() (localctx IChecksumTableContext) {
 type IOptimizeTableContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetActionOption returns the actionOption token.
@@ -61308,7 +61308,7 @@ func (p *MySqlParser) OptimizeTable() (localctx IOptimizeTableContext) {
 type IRepairTableContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetActionOption returns the actionOption token.
@@ -61511,7 +61511,7 @@ func (p *MySqlParser) RepairTable() (localctx IRepairTableContext) {
 type ICheckTableOptionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsCheckTableOptionContext differentiates from other interfaces.
@@ -61674,7 +61674,7 @@ func (p *MySqlParser) CheckTableOption() (localctx ICheckTableOptionContext) {
 type ICreateUdfunctionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetReturnType returns the returnType token.
@@ -61872,7 +61872,7 @@ func (p *MySqlParser) CreateUdfunction() (localctx ICreateUdfunctionContext) {
 type IInstallPluginContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsInstallPluginContext differentiates from other interfaces.
@@ -62001,7 +62001,7 @@ func (p *MySqlParser) InstallPlugin() (localctx IInstallPluginContext) {
 type IUninstallPluginContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsUninstallPluginContext differentiates from other interfaces.
@@ -62114,7 +62114,7 @@ func (p *MySqlParser) UninstallPlugin() (localctx IUninstallPluginContext) {
 type ISetStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsSetStatementContext differentiates from other interfaces.
@@ -62812,7 +62812,7 @@ func (p *MySqlParser) SetStatement() (localctx ISetStatementContext) {
 type IShowStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsShowStatementContext differentiates from other interfaces.
@@ -65098,7 +65098,7 @@ func (p *MySqlParser) ShowStatement() (localctx IShowStatementContext) {
 type IVariableClauseContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsVariableClauseContext differentiates from other interfaces.
@@ -65279,7 +65279,7 @@ func (p *MySqlParser) VariableClause() (localctx IVariableClauseContext) {
 type IShowCommonEntityContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsShowCommonEntityContext differentiates from other interfaces.
@@ -65499,7 +65499,7 @@ func (p *MySqlParser) ShowCommonEntity() (localctx IShowCommonEntityContext) {
 type IShowFilterContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsShowFilterContext differentiates from other interfaces.
@@ -65632,7 +65632,7 @@ func (p *MySqlParser) ShowFilter() (localctx IShowFilterContext) {
 type IShowGlobalInfoClauseContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsShowGlobalInfoClauseContext differentiates from other interfaces.
@@ -65867,7 +65867,7 @@ func (p *MySqlParser) ShowGlobalInfoClause() (localctx IShowGlobalInfoClauseCont
 type IShowSchemaEntityContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsShowSchemaEntityContext differentiates from other interfaces.
@@ -66024,7 +66024,7 @@ func (p *MySqlParser) ShowSchemaEntity() (localctx IShowSchemaEntityContext) {
 type IShowProfileTypeContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsShowProfileTypeContext differentiates from other interfaces.
@@ -66236,7 +66236,7 @@ func (p *MySqlParser) ShowProfileType() (localctx IShowProfileTypeContext) {
 type IBinlogStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsBinlogStatementContext differentiates from other interfaces.
@@ -66335,7 +66335,7 @@ func (p *MySqlParser) BinlogStatement() (localctx IBinlogStatementContext) {
 type ICacheIndexStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetSchema returns the schema rule contexts.
@@ -66588,7 +66588,7 @@ func (p *MySqlParser) CacheIndexStatement() (localctx ICacheIndexStatementContex
 type IFlushStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetFlushFormat returns the flushFormat token.
@@ -66777,7 +66777,7 @@ func (p *MySqlParser) FlushStatement() (localctx IFlushStatementContext) {
 type IKillStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetConnectionFormat returns the connectionFormat token.
@@ -66950,7 +66950,7 @@ func (p *MySqlParser) KillStatement() (localctx IKillStatementContext) {
 type ILoadIndexIntoCacheContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsLoadIndexIntoCacheContext differentiates from other interfaces.
@@ -67119,7 +67119,7 @@ func (p *MySqlParser) LoadIndexIntoCache() (localctx ILoadIndexIntoCacheContext)
 type IResetStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsResetStatementContext differentiates from other interfaces.
@@ -67226,7 +67226,7 @@ func (p *MySqlParser) ResetStatement() (localctx IResetStatementContext) {
 type IShutdownStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsShutdownStatementContext differentiates from other interfaces.
@@ -67317,7 +67317,7 @@ func (p *MySqlParser) ShutdownStatement() (localctx IShutdownStatementContext) {
 type ITableIndexesContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetIndexFormat returns the indexFormat token.
@@ -67496,7 +67496,7 @@ func (p *MySqlParser) TableIndexes() (localctx ITableIndexesContext) {
 type IFlushOptionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsFlushOptionContext differentiates from other interfaces.
@@ -67935,7 +67935,7 @@ func (p *MySqlParser) FlushOption() (localctx IFlushOptionContext) {
 type IFlushTableOptionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsFlushTableOptionContext differentiates from other interfaces.
@@ -68070,7 +68070,7 @@ func (p *MySqlParser) FlushTableOption() (localctx IFlushTableOptionContext) {
 type ILoadedTableIndexesContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetIndexFormat returns the indexFormat token.
@@ -68366,7 +68366,7 @@ func (p *MySqlParser) LoadedTableIndexes() (localctx ILoadedTableIndexesContext)
 type ISimpleDescribeStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetCommand returns the command token.
@@ -68563,7 +68563,7 @@ func (p *MySqlParser) SimpleDescribeStatement() (localctx ISimpleDescribeStateme
 type IFullDescribeStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetCommand returns the command token.
@@ -68795,7 +68795,7 @@ func (p *MySqlParser) FullDescribeStatement() (localctx IFullDescribeStatementCo
 type IHelpStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsHelpStatementContext differentiates from other interfaces.
@@ -68894,7 +68894,7 @@ func (p *MySqlParser) HelpStatement() (localctx IHelpStatementContext) {
 type IUseStatementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsUseStatementContext differentiates from other interfaces.
@@ -68999,7 +68999,7 @@ func (p *MySqlParser) UseStatement() (localctx IUseStatementContext) {
 type IDescribeObjectClauseContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsDescribeObjectClauseContext differentiates from other interfaces.
@@ -69265,7 +69265,7 @@ func (p *MySqlParser) DescribeObjectClause() (localctx IDescribeObjectClauseCont
 type IFullIdContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsFullIdContext differentiates from other interfaces.
@@ -69403,7 +69403,7 @@ func (p *MySqlParser) FullId() (localctx IFullIdContext) {
 type ITableNameContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsTableNameContext differentiates from other interfaces.
@@ -69500,7 +69500,7 @@ func (p *MySqlParser) TableName() (localctx ITableNameContext) {
 type IFullColumnNameContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsFullColumnNameContext differentiates from other interfaces.
@@ -69640,7 +69640,7 @@ func (p *MySqlParser) FullColumnName() (localctx IFullColumnNameContext) {
 type IIndexColumnNameContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetSortType returns the sortType token.
@@ -69835,7 +69835,7 @@ func (p *MySqlParser) IndexColumnName() (localctx IIndexColumnNameContext) {
 type IUserNameContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsUserNameContext differentiates from other interfaces.
@@ -69942,7 +69942,7 @@ func (p *MySqlParser) UserName() (localctx IUserNameContext) {
 type IMysqlVariableContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsMysqlVariableContext differentiates from other interfaces.
@@ -70045,7 +70045,7 @@ func (p *MySqlParser) MysqlVariable() (localctx IMysqlVariableContext) {
 type ICharsetNameContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsCharsetNameContext differentiates from other interfaces.
@@ -70184,7 +70184,7 @@ func (p *MySqlParser) CharsetName() (localctx ICharsetNameContext) {
 type ICollationNameContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsCollationNameContext differentiates from other interfaces.
@@ -70298,7 +70298,7 @@ func (p *MySqlParser) CollationName() (localctx ICollationNameContext) {
 type IEngineNameContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsEngineNameContext differentiates from other interfaces.
@@ -70449,7 +70449,7 @@ func (p *MySqlParser) EngineName() (localctx IEngineNameContext) {
 type IUuidSetContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsUuidSetContext differentiates from other interfaces.
@@ -70634,7 +70634,7 @@ func (p *MySqlParser) UuidSet() (localctx IUuidSetContext) {
 type IXidContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetGlobalTableUid returns the globalTableUid rule contexts.
@@ -70835,7 +70835,7 @@ func (p *MySqlParser) Xid() (localctx IXidContext) {
 type IXuidStringIdContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsXuidStringIdContext differentiates from other interfaces.
@@ -70972,7 +70972,7 @@ func (p *MySqlParser) XuidStringId() (localctx IXuidStringIdContext) {
 type IAuthPluginContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsAuthPluginContext differentiates from other interfaces.
@@ -71086,7 +71086,7 @@ func (p *MySqlParser) AuthPlugin() (localctx IAuthPluginContext) {
 type IUidContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsUidContext differentiates from other interfaces.
@@ -71211,7 +71211,7 @@ func (p *MySqlParser) Uid() (localctx IUidContext) {
 type ISimpleIdContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsSimpleIdContext differentiates from other interfaces.
@@ -71444,7 +71444,7 @@ func (p *MySqlParser) SimpleId() (localctx ISimpleIdContext) {
 type IDottedIdContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsDottedIdContext differentiates from other interfaces.
@@ -71569,7 +71569,7 @@ func (p *MySqlParser) DottedId() (localctx IDottedIdContext) {
 type IDecimalLiteralContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsDecimalLiteralContext differentiates from other interfaces.
@@ -71680,7 +71680,7 @@ func (p *MySqlParser) DecimalLiteral() (localctx IDecimalLiteralContext) {
 type IFileSizeLiteralContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsFileSizeLiteralContext differentiates from other interfaces.
@@ -71797,7 +71797,7 @@ func (p *MySqlParser) FileSizeLiteral() (localctx IFileSizeLiteralContext) {
 type IStringLiteralContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsStringLiteralContext differentiates from other interfaces.
@@ -72015,7 +72015,7 @@ func (p *MySqlParser) StringLiteral() (localctx IStringLiteralContext) {
 type IBooleanLiteralContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsBooleanLiteralContext differentiates from other interfaces.
@@ -72118,7 +72118,7 @@ func (p *MySqlParser) BooleanLiteral() (localctx IBooleanLiteralContext) {
 type IHexadecimalLiteralContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsHexadecimalLiteralContext differentiates from other interfaces.
@@ -72225,7 +72225,7 @@ func (p *MySqlParser) HexadecimalLiteral() (localctx IHexadecimalLiteralContext)
 type INullNotnullContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsNullNotnullContext differentiates from other interfaces.
@@ -72343,7 +72343,7 @@ func (p *MySqlParser) NullNotnull() (localctx INullNotnullContext) {
 type IConstantContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetNullLiteral returns the nullLiteral token.
@@ -72590,7 +72590,7 @@ func (p *MySqlParser) Constant() (localctx IConstantContext) {
 type IDataTypeContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsDataTypeContext differentiates from other interfaces.
@@ -73903,7 +73903,7 @@ func (p *MySqlParser) DataType() (localctx IDataTypeContext) {
 type ICollectionOptionsContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsCollectionOptionsContext differentiates from other interfaces.
@@ -74041,7 +74041,7 @@ func (p *MySqlParser) CollectionOptions() (localctx ICollectionOptionsContext) {
 type IConvertedDataTypeContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetTypeName returns the typeName token.
@@ -74359,7 +74359,7 @@ func (p *MySqlParser) ConvertedDataType() (localctx IConvertedDataTypeContext) {
 type ILengthOneDimensionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsLengthOneDimensionContext differentiates from other interfaces.
@@ -74472,7 +74472,7 @@ func (p *MySqlParser) LengthOneDimension() (localctx ILengthOneDimensionContext)
 type ILengthTwoDimensionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsLengthTwoDimensionContext differentiates from other interfaces.
@@ -74610,7 +74610,7 @@ func (p *MySqlParser) LengthTwoDimension() (localctx ILengthTwoDimensionContext)
 type ILengthTwoOptionalDimensionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsLengthTwoOptionalDimensionContext differentiates from other interfaces.
@@ -74756,7 +74756,7 @@ func (p *MySqlParser) LengthTwoOptionalDimension() (localctx ILengthTwoOptionalD
 type IUidListContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsUidListContext differentiates from other interfaces.
@@ -74896,7 +74896,7 @@ func (p *MySqlParser) UidList() (localctx IUidListContext) {
 type ITablesContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsTablesContext differentiates from other interfaces.
@@ -75036,7 +75036,7 @@ func (p *MySqlParser) Tables() (localctx ITablesContext) {
 type IIndexColumnNamesContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsIndexColumnNamesContext differentiates from other interfaces.
@@ -75189,7 +75189,7 @@ func (p *MySqlParser) IndexColumnNames() (localctx IIndexColumnNamesContext) {
 type IExpressionsContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsExpressionsContext differentiates from other interfaces.
@@ -75326,7 +75326,7 @@ func (p *MySqlParser) Expressions() (localctx IExpressionsContext) {
 type IExpressionsWithDefaultsContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsExpressionsWithDefaultsContext differentiates from other interfaces.
@@ -75463,7 +75463,7 @@ func (p *MySqlParser) ExpressionsWithDefaults() (localctx IExpressionsWithDefaul
 type IConstantsContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsConstantsContext differentiates from other interfaces.
@@ -75600,7 +75600,7 @@ func (p *MySqlParser) Constants() (localctx IConstantsContext) {
 type ISimpleStringsContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsSimpleStringsContext differentiates from other interfaces.
@@ -75722,7 +75722,7 @@ func (p *MySqlParser) SimpleStrings() (localctx ISimpleStringsContext) {
 type IUserVariablesContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsUserVariablesContext differentiates from other interfaces.
@@ -75844,7 +75844,7 @@ func (p *MySqlParser) UserVariables() (localctx IUserVariablesContext) {
 type IDefaultValueContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsDefaultValueContext differentiates from other interfaces.
@@ -76034,7 +76034,7 @@ func (p *MySqlParser) DefaultValue() (localctx IDefaultValueContext) {
 type ICurrentTimestampContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsCurrentTimestampContext differentiates from other interfaces.
@@ -76222,7 +76222,7 @@ func (p *MySqlParser) CurrentTimestamp() (localctx ICurrentTimestampContext) {
 type IExpressionOrDefaultContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsExpressionOrDefaultContext differentiates from other interfaces.
@@ -76339,7 +76339,7 @@ func (p *MySqlParser) ExpressionOrDefault() (localctx IExpressionOrDefaultContex
 type IIfExistsContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsIfExistsContext differentiates from other interfaces.
@@ -76438,7 +76438,7 @@ func (p *MySqlParser) IfExists() (localctx IIfExistsContext) {
 type IIfNotExistsContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsIfNotExistsContext differentiates from other interfaces.
@@ -76545,7 +76545,7 @@ func (p *MySqlParser) IfNotExists() (localctx IIfNotExistsContext) {
 type IFunctionCallContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsFunctionCallContext differentiates from other interfaces.
@@ -76938,7 +76938,7 @@ func (p *MySqlParser) FunctionCall() (localctx IFunctionCallContext) {
 type ISpecificFunctionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsSpecificFunctionContext differentiates from other interfaces.
@@ -78760,7 +78760,7 @@ func (p *MySqlParser) SpecificFunction() (localctx ISpecificFunctionContext) {
 type ICaseFuncAlternativeContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetCondition returns the condition rule contexts.
@@ -78918,7 +78918,7 @@ func (p *MySqlParser) CaseFuncAlternative() (localctx ICaseFuncAlternativeContex
 type ILevelsInWeightStringContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsLevelsInWeightStringContext differentiates from other interfaces.
@@ -79189,7 +79189,7 @@ func (p *MySqlParser) LevelsInWeightString() (localctx ILevelsInWeightStringCont
 type ILevelInWeightListElementContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetOrderType returns the orderType token.
@@ -79335,7 +79335,7 @@ func (p *MySqlParser) LevelInWeightListElement() (localctx ILevelInWeightListEle
 type IAggregateWindowedFunctionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetAggregator returns the aggregator token.
@@ -79862,7 +79862,7 @@ func (p *MySqlParser) AggregateWindowedFunction() (localctx IAggregateWindowedFu
 type IScalarFunctionNameContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsScalarFunctionNameContext differentiates from other interfaces.
@@ -80210,7 +80210,7 @@ func (p *MySqlParser) ScalarFunctionName() (localctx IScalarFunctionNameContext)
 type IPasswordFunctionClauseContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// GetFunctionName returns the functionName token.
@@ -80361,7 +80361,7 @@ func (p *MySqlParser) PasswordFunctionClause() (localctx IPasswordFunctionClause
 type IFunctionArgsContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsFunctionArgsContext differentiates from other interfaces.
@@ -80615,7 +80615,7 @@ func (p *MySqlParser) FunctionArgs() (localctx IFunctionArgsContext) {
 type IFunctionArgContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsFunctionArgContext differentiates from other interfaces.
@@ -80769,7 +80769,7 @@ func (p *MySqlParser) FunctionArg() (localctx IFunctionArgContext) {
 type IExpressionContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsExpressionContext differentiates from other interfaces.
@@ -81192,7 +81192,7 @@ func (p *MySqlParser) expression(_p int) (localctx IExpressionContext) {
 type IPredicateContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsPredicateContext differentiates from other interfaces.
@@ -82195,7 +82195,7 @@ func (p *MySqlParser) predicate(_p int) (localctx IPredicateContext) {
 type IExpressionAtomContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsExpressionAtomContext differentiates from other interfaces.
@@ -83310,7 +83310,7 @@ func (p *MySqlParser) expressionAtom(_p int) (localctx IExpressionAtomContext) {
 type IUnaryOperatorContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsUnaryOperatorContext differentiates from other interfaces.
@@ -83425,7 +83425,7 @@ func (p *MySqlParser) UnaryOperator() (localctx IUnaryOperatorContext) {
 type IComparisonOperatorContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsComparisonOperatorContext differentiates from other interfaces.
@@ -83607,7 +83607,7 @@ func (p *MySqlParser) ComparisonOperator() (localctx IComparisonOperatorContext)
 type ILogicalOperatorContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsLogicalOperatorContext differentiates from other interfaces.
@@ -83767,7 +83767,7 @@ func (p *MySqlParser) LogicalOperator() (localctx ILogicalOperatorContext) {
 type IBitOperatorContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsBitOperatorContext differentiates from other interfaces.
@@ -83927,7 +83927,7 @@ func (p *MySqlParser) BitOperator() (localctx IBitOperatorContext) {
 type IMathOperatorContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsMathOperatorContext differentiates from other interfaces.
@@ -84054,7 +84054,7 @@ func (p *MySqlParser) MathOperator() (localctx IMathOperatorContext) {
 type ICharsetNameBaseContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsCharsetNameBaseContext differentiates from other interfaces.
@@ -84309,7 +84309,7 @@ func (p *MySqlParser) CharsetNameBase() (localctx ICharsetNameBaseContext) {
 type ITransactionLevelBaseContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsTransactionLevelBaseContext differentiates from other interfaces.
@@ -84420,7 +84420,7 @@ func (p *MySqlParser) TransactionLevelBase() (localctx ITransactionLevelBaseCont
 type IPrivilegesBaseContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsPrivilegesBaseContext differentiates from other interfaces.
@@ -84551,7 +84551,7 @@ func (p *MySqlParser) PrivilegesBase() (localctx IPrivilegesBaseContext) {
 type IIntervalTypeBaseContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsIntervalTypeBaseContext differentiates from other interfaces.
@@ -84678,7 +84678,7 @@ func (p *MySqlParser) IntervalTypeBase() (localctx IIntervalTypeBaseContext) {
 type IDataTypeBaseContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsDataTypeBaseContext differentiates from other interfaces.
@@ -84801,7 +84801,7 @@ func (p *MySqlParser) DataTypeBase() (localctx IDataTypeBaseContext) {
 type IKeywordsCanBeIdContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsKeywordsCanBeIdContext differentiates from other interfaces.
@@ -86112,7 +86112,7 @@ func (p *MySqlParser) KeywordsCanBeId() (localctx IKeywordsCanBeIdContext) {
 type IFunctionNameBaseContext interface {
 	antlr.ParserRuleContext
 
-	// GetParser returns the parser.
+	// GetParser returns the yoctoparser.
 	GetParser() antlr.Parser
 
 	// IsFunctionNameBaseContext differentiates from other interfaces.
