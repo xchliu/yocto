@@ -27,7 +27,7 @@ func create_db(name string) bool {
 	name = strings.Replace(name, "\n", "", -1)
 	name = strings.Replace(name, " ", "", -1)
 	fmt.Println("Create new database :" + name)
-	datadir := "/Users/xchliu/Documents/workspace/yoctodb/yoctodb/data/"
+	datadir := GetConf("datadir")
 	dbdir := filepath.Join(datadir, name)
 	fmt.Println(dbdir)
 	err := os.Mkdir(dbdir, os.ModePerm)
