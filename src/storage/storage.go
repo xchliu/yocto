@@ -24,7 +24,7 @@ func StorageInit() {
 }
 
 func redo_loop() {
-	redofile := filepath.Join(datadir, "ydblog")
+	redofile := filepath.Join(GetConf("datadir"), "ydblog")
 	f, _ := os.OpenFile(redofile, os.O_WRONLY|os.O_APPEND, os.ModePerm)
 	for {
 		if int(len(REDOBUFFER)) > 0 {
@@ -60,7 +60,7 @@ type IORequest struct {
 //IO handle for threads
 //step 1 write the redo log
 //step 2 write the memory table
-func (ior IORequest) save() {
+func (ior IORequest) save() bool {
 	//TODO trans to redo formate
 	redo_log := ior.data
 	REDOBUFFER <- redo_log

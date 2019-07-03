@@ -10,6 +10,7 @@ import (
 	"yocto/src/log"
 	"yocto/src/parser/grammer/parser"
 	"yocto/src/storage"
+
 	"github.com/Unknwon/goconfig"
 )
 
@@ -43,7 +44,7 @@ func main() {
 			continue
 		}
 		//thread handle? use sync.pool
-		go cmd(conn) 
+		go cmd(conn)
 	}
 }
 
@@ -100,7 +101,7 @@ func cmd_ddl(cmd string) bool {
 	case "database":
 		return storage.DDL_db(obj_name, obj_action)
 	case "table":
-		return storage.DDL_Table()able(db, obj_name, obj_action, strings.Join(cmd_arrary[3:], ""))
+		return storage.DDL_Table()(db, obj_name, obj_action, strings.Join(cmd_arrary[3:], ""))
 	case "insert":
 		return storage.DML_Table(db, obj_name, strings.Join(cmd_arrary[3:], ""))
 	default:

@@ -1,11 +1,13 @@
 package storage
 
 import (
-	"sync"
-	"github.com/Unknwon/goconfig"
+	"strings"
+	"yocto/src/lib"
 	"yocto/src/log"
+
+	"github.com/Unknwon/goconfig"
 )
-)
+
 type buffer []string
 
 var REDOBUFFER = make(chan string, 128)
@@ -14,9 +16,8 @@ var CHANGEBUFFER = make(chan string, 128)
 //replace as the config value
 var MEMTABLE = make(map[string]map[string]string)
 
-
 //buffers
-var CONFIG = make(map[string]map[string]string)
+var CONFIGBUFFER = make(map[string]map[string]string)
 
 //buffer pool
 type BUFFERPOOL struct {
@@ -26,43 +27,54 @@ type BUFFERPOOL struct {
 	value interface{}
 }
 
-var bp = sync.Pool{
-		New: func() interface{} {
-			return new(BUFFERPOOL)
-		}
-	}
+// sequense
+var SEQUENCE = make(map[string]int)
 
-func buffer_init() bool{
+func buffer_init() bool {
 	//config buffer
 	cfg, err := goconfig.LoadConfigFile("../../data/yocto.cnf")
 	if err != nil {
 		log.Error.Println(err)
 		//TODO reset as the default values
 	} else {
-		for _,section := range cfg.GetSectionList(){
-			CONFIG[section]=make(map[string][string])
-			for key,value := range cfg.GetSection(section){
-				CONFIG[section][key]=value
-			}
+		for _, section := range cfg.GetSectionList() {
+			CONFIGBUFFER[section] = make(map[string]string)
+			CONFIGBUFFER[section], _ = cfg.GetSection(section)
 		}
 	}
 	//table meta
-	datadir = GetConf('datadir')
-	
-	var table_meta=bp.Get().(*BUFFERPOOL)
-	table_meta.buf=CFG
-	table_meta.value=	
+	tablebuffer_int()
+	//sequence table
+	return true
 }
 
-func BufferRecycle(){
-	
+func tablebuffer_int() bool {
+	datadir := GetConf("datadir")
+	dbs, _ := lib.DirScan(datadir)
+	//TODO put the table meta into table cache
+	for index := range dbs {
+		files, _ := lib.FileScan(dbs[index])
+		for index := range files {
+			ok := strings.HasSuffix(files[index], ".def")
+			if ok {
+				continue
+			}
+		}
+	}
+	return true
+}
+
+func BufferRecycle() {
+
 }
 
 func GetConf(key string) string {
-	value,ok := CONFIG[key]
-	if (ok){
-		return value
-	}else{
-		return nil
+	//TODO return the values match the given key
+	//deal with section
+	value, ok := CONFIGBUFFER[key]
+	if ok {
+		return value[key]
+	} else {
+		return ""
 	}
 }

@@ -31,10 +31,11 @@ func DDL_Table(db string, name string, action string, define string) bool {
 
 func DML_Table(db string, name string, data string) bool {
 	var ior IORequest
-	ior.data=data
-	ior.metadata=strings.Join([db,name],'.')
-	ior.iotype=1
-	ior.key=get_next_id(ior.metadata)
+	ior.data = data
+	ior.metadata = strings.Join([]string{db, name}, ".")
+	ior.iotype = 1
+	//Table level bottle on performance
+	ior.key = string(get_next_id(ior.metadata))
 	return ior.save()
 }
 
@@ -59,6 +60,16 @@ func Create_table(tb table) bool {
 	return true
 }
 
-func Get_Table_Define(db string,name string){
-	cfg
+func Get_Table_Define(db string, name string) {
+
+}
+
+func get_next_id(metadata string) int {
+	v, ok := SEQUENCE[metadata]
+	if ok {
+		return v
+	} else {
+		SEQUENCE[metadata] = 1
+		return 1
+	}
 }
