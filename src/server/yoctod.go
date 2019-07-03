@@ -9,13 +9,8 @@ import (
 	"strconv"
 	"strings"
 	"yocto/src/log"
-<<<<<<< HEAD
-	"yocto/src/parser"
-=======
->>>>>>> c8886cf24c24308052921c7483e94520f8ca94d0
 	"yocto/src/storage"
 	"yocto/src/yoctoparser"
-	"yocto/src/yoctoparser/grammer/parser"
 )
 
 var SERVICE_ADDR = "0.0.0.0:6180"
@@ -72,7 +67,6 @@ func cmd(conn net.Conn) {
 	}
 }
 
-<<<<<<< HEAD
 //TODO add the parser,and the cmd should be a json or parsetree
 func cmd_execute(cmd string) bool {
 	// cmd = strings.Replace(cmd, "\n", "", -1)
@@ -119,7 +113,6 @@ func cmd_execute(cmd string) bool {
 // 	}
 // 	return false
 // }
-=======
 //TODO add the yoctoparser,and the cmd should be a json or parsetree
 func cmd_parse(cmd string) bool {
 	cmd = strings.Replace(cmd, "\n", "", -1)
@@ -183,7 +176,6 @@ func cmd_ddl(obj yoctoparser.SQLObject) bool {
 
 	return false
 }
->>>>>>> c8886cf24c24308052921c7483e94520f8ca94d0
 
 //TODO to be rebuild for yoctoparser
 //func cmd_ddl(cmd string) bool {

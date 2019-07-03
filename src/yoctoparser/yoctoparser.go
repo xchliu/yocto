@@ -2,15 +2,10 @@ package parser
 
 import (
 	"fmt"
-<<<<<<< HEAD:src/parser/yoctoparser.go
-	"yocto/src/parser/grammer/parser"
-
-	"github.com/antlr/antlr4/runtime/Go/antlr"
-=======
-	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"strings"
 	"yocto/src/yoctoparser/grammer/parser"
->>>>>>> c8886cf24c24308052921c7483e94520f8ca94d0:src/yoctoparser/yoctoparser.go
+
+	"github.com/antlr/antlr4/runtime/Go/antlr"
 )
 
 type CreateColumnDefine struct {

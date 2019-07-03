@@ -77,11 +77,7 @@ func DML_Table(db string, name string, data string) bool {
 func Create_table(tb table) bool {
 	//TODO read from the config file
 	fmt.Println("Create new table :" + tb.name)
-<<<<<<< HEAD
 	datadir := GetConf("datadir")
-=======
-	datadir := "/tmp/yocto/data/"
->>>>>>> c8886cf24c24308052921c7483e94520f8ca94d0
 	tabledir := filepath.Join(datadir, tb.db, tb.name)
 	fmt.Println("Init table in :" + tabledir)
 	obj_def, err := os.OpenFile(tabledir+".def", os.O_RDWR|os.O_CREATE|os.O_TRUNC, os.ModePerm)
