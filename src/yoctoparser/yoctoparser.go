@@ -3,15 +3,16 @@ package yoctoparser
 import (
 	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
+	"strings"
 	"yocto/src/yoctoparser/grammer/parser"
 )
 
 type CreateColumnDefine struct {
-	cname      string
-	datatype   int
-	clength    string
-	cprecision string
-	constraint []CreateColumnConstraint
+	Cname      string
+	Datatype   int
+	Clength    string
+	Cprecision string
+	Constraint []CreateColumnConstraint
 }
 
 type CreateColumnConstraint struct {
@@ -25,6 +26,7 @@ type QueryColumnDefine struct {
 
 type SQLObject struct {
 	DB            string
+	TableList     []string
 	SQLQuery      string
 	SQLType       int
 	SQLCommand    int
@@ -57,20 +59,27 @@ func (this *SQLObject) EnterDmlStatement(ctx *parser.DmlStatementContext) {
 
 func (this *SQLObject) EnterColumnCreateTable(ctx *parser.ColumnCreateTableContext) {
 	this.SQLCommand = parser.MySqlParserRULE_createTable
+	objectName := strings.Split(ctx.TableName().GetText(), ".")
+	if len(objectName) == 2 {
+		this.DB = objectName[0]
+		this.TableList = append(this.TableList, objectName[1])
+	} else {
+		this.TableList = append(this.TableList, objectName[0])
+	}
 }
 
 func (tableColumn *CreateColumnDefine) getDataLength(length interface{}) {
 	switch length.(type) {
 	case *parser.LengthOneDimensionContext:
-		tableColumn.clength = length.(*parser.LengthOneDimensionContext).DecimalLiteral().GetText()
+		tableColumn.Clength = length.(*parser.LengthOneDimensionContext).DecimalLiteral().GetText()
 
 	case *parser.LengthTwoDimensionContext:
-		tableColumn.clength = length.(*parser.LengthTwoDimensionContext).DecimalLiteral(0).GetText()
-		tableColumn.cprecision = length.(*parser.LengthTwoDimensionContext).DecimalLiteral(1).GetText()
+		tableColumn.Clength = length.(*parser.LengthTwoDimensionContext).DecimalLiteral(0).GetText()
+		tableColumn.Cprecision = length.(*parser.LengthTwoDimensionContext).DecimalLiteral(1).GetText()
 
 	case *parser.LengthTwoOptionalDimensionContext:
-		tableColumn.clength = length.(*parser.LengthTwoOptionalDimensionContext).DecimalLiteral(0).GetText()
-		tableColumn.cprecision = length.(*parser.LengthTwoOptionalDimensionContext).DecimalLiteral(1).GetText()
+		tableColumn.Clength = length.(*parser.LengthTwoOptionalDimensionContext).DecimalLiteral(0).GetText()
+		tableColumn.Cprecision = length.(*parser.LengthTwoOptionalDimensionContext).DecimalLiteral(1).GetText()
 	}
 }
 
@@ -80,7 +89,7 @@ func (tableColumn *CreateColumnDefine) GetColumnInfo(ctx *parser.ColumnDefinitio
 		switch columnDefinition.(type) {
 		case *parser.DimensionDataTypeContext:
 			{
-				tableColumn.datatype = columnDefinition.(*parser.DimensionDataTypeContext).GetTypeName().GetTokenType()
+				tableColumn.Datatype = columnDefinition.(*parser.DimensionDataTypeContext).GetTypeName().GetTokenType()
 				for _, length := range columnDefinition.GetChildren() {
 					tableColumn.getDataLength(length)
 				}
@@ -88,7 +97,7 @@ func (tableColumn *CreateColumnDefine) GetColumnInfo(ctx *parser.ColumnDefinitio
 
 		case *parser.StringDataTypeContext:
 			{
-				tableColumn.datatype = columnDefinition.(*parser.StringDataTypeContext).GetTypeName().GetTokenType()
+				tableColumn.Datatype = columnDefinition.(*parser.StringDataTypeContext).GetTypeName().GetTokenType()
 				for _, length := range columnDefinition.GetChildren() {
 					tableColumn.getDataLength(length)
 				}
@@ -96,7 +105,7 @@ func (tableColumn *CreateColumnDefine) GetColumnInfo(ctx *parser.ColumnDefinitio
 
 		case *parser.NationalStringDataTypeContext:
 			{
-				tableColumn.datatype = columnDefinition.(*parser.NationalStringDataTypeContext).GetTypeName().GetTokenType()
+				tableColumn.Datatype = columnDefinition.(*parser.NationalStringDataTypeContext).GetTypeName().GetTokenType()
 				for _, length := range columnDefinition.GetChildren() {
 					tableColumn.getDataLength(length)
 				}
@@ -104,7 +113,7 @@ func (tableColumn *CreateColumnDefine) GetColumnInfo(ctx *parser.ColumnDefinitio
 
 		case *parser.NationalVaryingStringDataTypeContext:
 			{
-				tableColumn.datatype = columnDefinition.(*parser.NationalVaryingStringDataTypeContext).GetTypeName().GetTokenType()
+				tableColumn.Datatype = columnDefinition.(*parser.NationalVaryingStringDataTypeContext).GetTypeName().GetTokenType()
 				for _, length := range columnDefinition.GetChildren() {
 					tableColumn.getDataLength(length)
 				}
@@ -112,7 +121,7 @@ func (tableColumn *CreateColumnDefine) GetColumnInfo(ctx *parser.ColumnDefinitio
 
 		case *parser.SimpleDataTypeContext:
 			{
-				tableColumn.datatype = columnDefinition.(*parser.SimpleDataTypeContext).GetTypeName().GetTokenType()
+				tableColumn.Datatype = columnDefinition.(*parser.SimpleDataTypeContext).GetTypeName().GetTokenType()
 				for _, length := range columnDefinition.GetChildren() {
 					tableColumn.getDataLength(length)
 				}
@@ -120,7 +129,7 @@ func (tableColumn *CreateColumnDefine) GetColumnInfo(ctx *parser.ColumnDefinitio
 
 		case *parser.CollectionDataTypeContext:
 			{
-				tableColumn.datatype = columnDefinition.(*parser.CollectionDataTypeContext).GetTypeName().GetTokenType()
+				tableColumn.Datatype = columnDefinition.(*parser.CollectionDataTypeContext).GetTypeName().GetTokenType()
 				for _, length := range columnDefinition.GetChildren() {
 					tableColumn.getDataLength(length)
 				}
@@ -128,7 +137,7 @@ func (tableColumn *CreateColumnDefine) GetColumnInfo(ctx *parser.ColumnDefinitio
 
 		case *parser.SpatialDataTypeContext:
 			{
-				tableColumn.datatype = columnDefinition.(*parser.SpatialDataTypeContext).GetTypeName().GetTokenType()
+				tableColumn.Datatype = columnDefinition.(*parser.SpatialDataTypeContext).GetTypeName().GetTokenType()
 				for _, length := range columnDefinition.GetChildren() {
 					tableColumn.getDataLength(length)
 				}
@@ -140,7 +149,7 @@ func (tableColumn *CreateColumnDefine) GetColumnInfo(ctx *parser.ColumnDefinitio
 					constraintType: parser.MySqlParserPRIMARY,
 					flag:           true,
 					str:            ""}
-				tableColumn.constraint = append(tableColumn.constraint, pkConstraint)
+				tableColumn.Constraint = append(tableColumn.Constraint, pkConstraint)
 			}
 
 		case *parser.CommentColumnConstraintContext:
@@ -149,7 +158,7 @@ func (tableColumn *CreateColumnDefine) GetColumnInfo(ctx *parser.ColumnDefinitio
 					constraintType: parser.MySqlParserCOMMENT,
 					flag:           true,
 					str:            columnDefinition.(*parser.CommentColumnConstraintContext).STRING_LITERAL().GetText()}
-				tableColumn.constraint = append(tableColumn.constraint, cmtConstraint)
+				tableColumn.Constraint = append(tableColumn.Constraint, cmtConstraint)
 			}
 
 		case *parser.DefaultColumnConstraintContext:
@@ -158,7 +167,7 @@ func (tableColumn *CreateColumnDefine) GetColumnInfo(ctx *parser.ColumnDefinitio
 					constraintType: parser.MySqlParserDEFAULT,
 					flag:           true,
 					str:            columnDefinition.(*parser.DefaultColumnConstraintContext).DefaultValue().GetText()}
-				tableColumn.constraint = append(tableColumn.constraint, dftConstraint)
+				tableColumn.Constraint = append(tableColumn.Constraint, dftConstraint)
 			}
 
 		case *parser.NullColumnConstraintContext:
@@ -176,7 +185,7 @@ func (tableColumn *CreateColumnDefine) GetColumnInfo(ctx *parser.ColumnDefinitio
 						flag:           false,
 						str:            ""}
 				}
-				tableColumn.constraint = append(tableColumn.constraint, nullConstraint)
+				tableColumn.Constraint = append(tableColumn.Constraint, nullConstraint)
 			}
 		}
 	}
@@ -191,7 +200,7 @@ func (this *SQLObject) EnterCreateDefinitions(ctx *parser.CreateDefinitionsConte
 			switch value.(type) {
 
 			case *parser.UidContext:
-				tableColumn.cname = value.(*parser.UidContext).SimpleId().GetText()
+				tableColumn.Cname = value.(*parser.UidContext).SimpleId().GetText()
 
 			case *parser.ColumnDefinitionContext:
 				tableColumn.GetColumnInfo(value.(*parser.ColumnDefinitionContext))
@@ -203,27 +212,34 @@ func (this *SQLObject) EnterCreateDefinitions(ctx *parser.CreateDefinitionsConte
 }
 
 func test(q, db string) {
-	p := Build_paser(q, "")
+	p := Build_paser(q, db)
 	tree := p.Root()
 	ss := new(SQLObject)
+	ss.DB = db
 	antlr.ParseTreeWalkerDefault.Walk(ss, tree)
 	fmt.Println(ss.CreateColumns)
+	fmt.Println(ss)
 	fmt.Println(tree.ToStringTree(p.GetTokenNames(), p.BaseParser))
 }
 
-func YoctoPaser(query, db string) (s SQLObject) {
+func YoctoPaser(query, db string) (s *SQLObject) {
+	ss := new(SQLObject)
+	ss.DB = db
+	ss.SQLQuery = query
 	p := Build_paser(query, db)
 	tree := p.Root()
-	antlr.ParseTreeWalkerDefault.Walk(s, tree)
-	return s
+	antlr.ParseTreeWalkerDefault.Walk(ss, tree)
+	fmt.Println(ss)
+	//s = *ss
+	return ss
 }
 
 func main() {
-	test("CREATE TABLE DB1.T1"+
+	YoctoPaser("CREATE TABLE T1"+
 		"(C1 INT(14) NOT NULL PRIMARY KEY COMMENT 'JEIHEI', "+
 		"C2 VARCHAR(120) DEFAULT 'ABCD' COMMENT 'WANGBADAN', "+
 		"C3 DECIMAL(12, 13) NOT NULL,"+
 		"C4 DATE NULL"+
-		") ENGINE=INNODB AUTO_INCREMENT=6 DEFAULT CHARSET=UTF8MB4 ", "")
+		") ENGINE=INNODB AUTO_INCREMENT=6 DEFAULT CHARSET=UTF8MB4 ", "aaaa")
 	//test("CREATE TABLE DB1.T1 (C2 VARCHAR(120) DEFAULT 'ABCD' COMMENT 'WANGBADAN') ENGINE=INNODB AUTO_INCREMENT=6 DEFAULT CHARSET=UTF8MB4 ", "")
 }

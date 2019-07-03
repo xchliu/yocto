@@ -4,7 +4,9 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strconv"
 	"strings"
+	"yocto/src/yoctoparser"
 )
 
 type table struct {
@@ -29,6 +31,39 @@ func DDL_Table(db string, name string, action string, define string) bool {
 	return false
 }
 
+func DDL_ColumnCreateTable(sqlObject yoctoparser.SQLObject) bool {
+	fmt.Println("Create new table :" + sqlObject.TableList[0])
+	datadir := "/tmp/yocto/data/"
+	tabledir := filepath.Join(datadir, sqlObject.DB, sqlObject.TableList[0])
+	fmt.Println("Init table in :" + tabledir)
+	obj_def, err := os.OpenFile(tabledir+".def", os.O_RDWR|os.O_CREATE|os.O_TRUNC, os.ModePerm)
+	if err != nil {
+		fmt.Println(err)
+		return false
+	}
+	//todo do column action
+	//tmp method
+	for cIndex, col := range sqlObject.CreateColumns {
+		_, _ = obj_def.WriteString(strconv.Itoa(cIndex) + ">" + col.Cname)
+		_, _ = obj_def.WriteString(strconv.Itoa(cIndex) + ">" + col.Clength)
+		_, _ = obj_def.WriteString(strconv.Itoa(cIndex) + ">" + col.Cprecision)
+		_, _ = obj_def.WriteString(strconv.Itoa(cIndex) + ">" + strconv.Itoa(col.Datatype))
+		for _, _ = range col.Constraint {
+			//todo column constraint
+			// column.constraint
+
+		}
+	}
+	//obj_def.WriteString(sqlObject.CreateColumns)
+	obj_data, err := os.OpenFile(tabledir+".ydb", os.O_RDWR|os.O_CREATE|os.O_TRUNC, os.ModePerm)
+	if err != nil {
+		fmt.Println(err)
+		return false
+	}
+	_, _ = obj_data.WriteString("")
+	return true
+}
+
 func DML_Table(db string, name string, data string) bool {
 	var ior IORequest
 	ior.data = data
@@ -42,7 +77,7 @@ func DML_Table(db string, name string, data string) bool {
 func Create_table(tb table) bool {
 	//TODO read from the config file
 	fmt.Println("Create new table :" + tb.name)
-	datadir := "/Users/xchliu/Documents/workspace/yoctodb/yoctodb/data/"
+	datadir := "/tmp/yocto/data/"
 	tabledir := filepath.Join(datadir, tb.db, tb.name)
 	fmt.Println("Init table in :" + tabledir)
 	obj_def, err := os.OpenFile(tabledir+".def", os.O_RDWR|os.O_CREATE|os.O_TRUNC, os.ModePerm)
