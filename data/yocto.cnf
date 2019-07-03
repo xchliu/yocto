@@ -1,7 +1,7 @@
 [global]
 debug=1
-datadir=/Users/xchliu/Documents/workspace/go/src/yocto/data
-logfile=/Users/xchliu/Documents/workspace/go/src/yocto/data/yocto.log
+datadir=/tmp/yocto/data
+logfile=/tmp/yocto/data/yocto.log
 
 
 [caches]
