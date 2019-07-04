@@ -61,7 +61,7 @@ type IORequest struct {
 //step 1 write the redo log
 //step 2 write the memory table
 func (ior IORequest) save() bool {
-	//TODO trans to redo formate
+	//TODO trans to redo format
 	redo_log := ior.data
 	REDOBUFFER <- redo_log
 	//memtable

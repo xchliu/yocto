@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"net"
 	"os"
+	"time"
 )
 
 var WELCOME string = "Welcome to the Yoctodb!"
@@ -15,6 +16,13 @@ var SERVER = "127.0.0.1:6180"
 func main() {
 	fmt.Println(WELCOME)
 	reader := bufio.NewReader(os.Stdin)
+	conn, err := net.Dial("tcp", SERVER)
+	defer conn.Close()
+	if err != nil {
+		fmt.Printf("Connect failed, err : %v\n", err.Error())
+		return
+	}
+	conn.SetDeadline(time.Now().Add(8 * time.Hour))
 	for {
 		fmt.Print(PROMOTE)
 		cmd, err := reader.ReadString(CMDEOF)
@@ -24,19 +32,13 @@ func main() {
 		if cmd == "exit" {
 			os.Exit(0)
 		}
-		//fmt.Print(cmd)
-		client(cmd)
+		// fmt.Print(cmd)
+		client(conn, cmd)
 	}
 }
 
-func client(cmd string) {
-	conn, err := net.Dial("tcp", SERVER)
-	//	defer conn.Close()
-	if err != nil {
-		fmt.Printf("connect failed, err : %v\n", err.Error())
-		return
-	}
-	_, err = conn.Write([]byte(cmd))
+func client(conn net.Conn, cmd string) {
+	_, err := conn.Write([]byte(cmd))
 	if err != nil {
 		fmt.Printf("write failed , err : %v\n", err)
 	} else {
