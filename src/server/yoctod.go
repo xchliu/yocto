@@ -53,7 +53,7 @@ func main() {
 
 // deal the commands
 func cmd(conn net.Conn) {
-	//	defer conn.Close()
+	defer conn.Close()
 	for {
 		var buf [128]byte
 		n, err := conn.Read(buf[:])
