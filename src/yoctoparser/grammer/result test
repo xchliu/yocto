@@ -120,3 +120,14 @@
                         )
                     ) (tableOption ENGINE = (engineName INNODB)) (tableOption AUTO_INCREMENT = (decimalLiteral 6)) (tableOption DEFAULT CHARSET = (charsetName (charsetNameBase UTF8MB4))))))) <EOF>)
 
+
+
+(root
+    (sqlStatements
+        (sqlStatement
+            (dmlStatement
+                (insertStatement INSERT INTO
+                    (tableName (fullId (uid (simpleId A)) .T))
+                    ( (uidList (uid (simpleId C1)) , (uid (simpleId C2))) )
+                    (insertStatementValue VALUES ( (expressionsWithDefaults (expressionOrDefault (expression (predicate (expressionAtom (constant (decimalLiteral 1)))))) , (expressionOrDefault (expression (predicate (expressionAtom (constant (stringLiteral 'ABC'))))))) ))
+                )))) <EOF>)
