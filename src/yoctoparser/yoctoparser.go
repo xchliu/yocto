@@ -58,6 +58,41 @@ func (this *SQLObject) EnterDmlStatement(ctx *parser.DmlStatementContext) {
 	this.SQLType = parser.MySqlParserRULE_dmlStatement
 }
 
+func (this *SQLObject) EnterInsertStatement(ctx *parser.InsertStatementContext) {
+	fmt.Println("insert stmt")
+	this.SQLCommand = parser.MySqlParserRULE_insertStatement
+	objectName := strings.Split(ctx.TableName().GetText(), ".")
+	if len(objectName) == 2 {
+		this.DB = objectName[0]
+		this.TableList = append(this.TableList, objectName[1])
+	} else {
+		this.TableList = append(this.TableList, objectName[0])
+	}
+
+	//fmt.Println(ctx.InsertStatementValue().)
+
+	for _, child := range ctx.InsertStatementValue().GetChildren() {
+		switch child.(type) {
+		case *antlr.TerminalNodeImpl:
+			{
+				fmt.Println("haha", child.(*antlr.TerminalNodeImpl).GetText())
+			}
+		case *parser.ExpressionsWithDefaultsContext:
+			{
+				fmt.Println("cc", child.(*parser.ExpressionsWithDefaultsContext).ExpressionOrDefault(0).GetText())
+
+			}
+		}
+	}
+
+	for _, child := range ctx.AllUidList() {
+		for _, grandchild := range child.(*parser.UidListContext).AllUid() {
+			fmt.Println("bilibili", grandchild.(*parser.UidContext).SimpleId().GetText())
+		}
+	}
+
+}
+
 func (this *SQLObject) EnterColumnCreateTable(ctx *parser.ColumnCreateTableContext) {
 	this.SQLCommand = parser.MySqlParserRULE_createTable
 	objectName := strings.Split(ctx.TableName().GetText(), ".")
@@ -232,15 +267,20 @@ func YoctoPaser(query, db string) (s *SQLObject) {
 	antlr.ParseTreeWalkerDefault.Walk(ss, tree)
 	fmt.Println(ss)
 	//s = *ss
+	fmt.Println(tree.ToStringTree(p.GetTokenNames(), p.BaseParser))
 	return ss
 }
 
 func main() {
-	YoctoPaser("CREATE TABLE T1"+
-		"(C1 INT(14) NOT NULL PRIMARY KEY COMMENT 'JEIHEI', "+
-		"C2 VARCHAR(120) DEFAULT 'ABCD' COMMENT 'WANGBADAN', "+
-		"C3 DECIMAL(12, 13) NOT NULL,"+
-		"C4 DATE NULL"+
-		") ENGINE=INNODB AUTO_INCREMENT=6 DEFAULT CHARSET=UTF8MB4 ", "aaaa")
+	//query := "INSERT INTO A.T (C1 , C2 ) VALUES (1, 'ABC')"
+	query := "INSERT INTO A.T (C1 , C2 ) VALUES (1133123, 'ABC')"
+	//query := "INSERT INTO A.T VALUES (1, 'ABC')"
+	//YoctoPaser("CREATE TABLE T1"+
+	//	"(C1 INT(14) NOT NULL PRIMARY KEY COMMENT 'JEIHEI', "+
+	//	"C2 VARCHAR(120) DEFAULT 'ABCD' COMMENT 'WANGBADAN', "+
+	//	"C3 DECIMAL(12, 13) NOT NULL,"+
+	//	"C4 DATE NULL"+
+	//	") ENGINE=INNODB AUTO_INCREMENT=6 DEFAULT CHARSET=UTF8MB4 ", "aaaa")
+	YoctoPaser(query, "abc")
 	//test("CREATE TABLE DB1.T1 (C2 VARCHAR(120) DEFAULT 'ABCD' COMMENT 'WANGBADAN') ENGINE=INNODB AUTO_INCREMENT=6 DEFAULT CHARSET=UTF8MB4 ", "")
 }
