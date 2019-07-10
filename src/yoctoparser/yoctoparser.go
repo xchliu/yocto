@@ -22,6 +22,12 @@ type CreateColumnConstraint struct {
 	str            string
 }
 
+type ChangeColumnData struct {
+	DataBefore string
+	DataAfter  string
+	DataType   int
+}
+
 type QueryColumnDefine struct {
 }
 
@@ -31,8 +37,9 @@ type SQLObject struct {
 	SQLQuery      string
 	SQLType       int
 	SQLCommand    int
-	CreateColumns []CreateColumnDefine
+	CreateColumns []CreateColumnDefine // including create_table/insert col info
 	QueryColumns  []QueryColumnDefine
+	Changecoldata []ChangeColumnData
 	YoctoSQLBaseListener
 }
 
@@ -59,7 +66,6 @@ func (this *SQLObject) EnterDmlStatement(ctx *parser.DmlStatementContext) {
 }
 
 func (this *SQLObject) EnterInsertStatement(ctx *parser.InsertStatementContext) {
-	fmt.Println("insert stmt")
 	this.SQLCommand = parser.MySqlParserRULE_insertStatement
 	objectName := strings.Split(ctx.TableName().GetText(), ".")
 	if len(objectName) == 2 {
@@ -75,19 +81,35 @@ func (this *SQLObject) EnterInsertStatement(ctx *parser.InsertStatementContext) 
 		switch child.(type) {
 		case *antlr.TerminalNodeImpl:
 			{
-				fmt.Println("haha", child.(*antlr.TerminalNodeImpl).GetText())
+				//	values
 			}
 		case *parser.ExpressionsWithDefaultsContext:
 			{
-				fmt.Println("cc", child.(*parser.ExpressionsWithDefaultsContext).ExpressionOrDefault(0).GetText())
+				for _, x := range child.(*parser.ExpressionsWithDefaultsContext).GetChildren() {
+					switch x.(type) {
+					case *parser.ExpressionOrDefaultContext:
+						{
+							changedata := ChangeColumnData{
+								DataBefore: "",
+								DataAfter:  x.(*parser.ExpressionOrDefaultContext).GetText()}
+							this.Changecoldata = append(this.Changecoldata, changedata)
+						}
+					case *antlr.TerminalNodeImpl:
+						{
+							//	,
+						}
+					}
 
+				}
 			}
 		}
 	}
 
+	//col name
 	for _, child := range ctx.AllUidList() {
-		for _, grandchild := range child.(*parser.UidListContext).AllUid() {
-			fmt.Println("bilibili", grandchild.(*parser.UidContext).SimpleId().GetText())
+		for _, cname := range child.(*parser.UidListContext).AllUid() {
+			col := CreateColumnDefine{Cname: cname.(*parser.UidContext).SimpleId().GetText()}
+			this.CreateColumns = append(this.CreateColumns, col)
 		}
 	}
 
@@ -265,9 +287,9 @@ func YoctoPaser(query, db string) (s *SQLObject) {
 	p := Build_paser(query, db)
 	tree := p.Root()
 	antlr.ParseTreeWalkerDefault.Walk(ss, tree)
-	fmt.Println(ss)
+	//fmt.Println(ss)
 	//s = *ss
-	fmt.Println(tree.ToStringTree(p.GetTokenNames(), p.BaseParser))
+	//fmt.Println(tree.ToStringTree(p.GetTokenNames(), p.BaseParser))
 	return ss
 }
 

@@ -31,6 +31,11 @@ type table struct {
 //	return false
 //}
 
+func DML_InsertStatement(sqlObject yoctoparser.SQLObject) bool {
+	fmt.Println("Insert into db.table: ", sqlObject.DB, sqlObject.TableList[0])
+	return true
+}
+
 func DDL_ColumnCreateTable(sqlObject yoctoparser.SQLObject) bool {
 	fmt.Println("Create new table :" + sqlObject.TableList[0])
 	datadir := "/tmp/yocto/data/"
@@ -72,31 +77,6 @@ func DML_Table(db string, name string, data string) bool {
 	//Table level bottle on performance
 	ior.key = string(get_next_id(ior.metadata))
 	return ior.save()
-}
-
-//func Create_table(tb table) bool {
-//	//TODO read from the config file
-//	fmt.Println("Create new table :" + tb.name)
-//	datadir := GetConf("datadir")
-//	tabledir := filepath.Join(datadir, tb.db, tb.name)
-//	fmt.Println("Init table in :" + tabledir)
-//	obj_def, err := os.OpenFile(tabledir+".def", os.O_RDWR|os.O_CREATE|os.O_TRUNC, os.ModePerm)
-//	if err != nil {
-//		fmt.Println(err)
-//		return false
-//	}
-//	obj_def.WriteString(tb.define)
-//	obj_data, err := os.OpenFile(tabledir+".ydb", os.O_RDWR|os.O_CREATE|os.O_TRUNC, os.ModePerm)
-//	if err != nil {
-//		fmt.Println(err)
-//		return false
-//	}
-//	obj_data.WriteString("")
-//	return true
-//}
-
-func Get_Table_Define(db string, name string) {
-
 }
 
 func get_next_id(metadata string) int {

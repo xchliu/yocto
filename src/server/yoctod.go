@@ -111,14 +111,6 @@ func cmd_run(cmd string) bool {
 	//}
 }
 
-func cmd_dml(obj yoctoparser.SQLObject) bool {
-	return true
-}
-
-func cmd_tx(obj yoctoparser.SQLObject) bool {
-	return true
-}
-
 func cmd_ddl(obj yoctoparser.SQLObject) bool {
 
 	switch obj.SQLCommand {
@@ -135,6 +127,37 @@ func cmd_ddl(obj yoctoparser.SQLObject) bool {
 	}
 
 	return false
+}
+
+func cmd_dml(obj yoctoparser.SQLObject) bool {
+	switch obj.SQLCommand {
+	case parser.MySqlParserRULE_insertStatement:
+		{
+			return storage.DML_InsertStatement(obj)
+		}
+	case parser.MySqlParserRULE_deleteStatement:
+		{
+
+		}
+	case parser.MySqlParserRULE_updateStatement:
+		{
+
+		}
+
+	case parser.MySqlParserRULE_selectStatement:
+		{
+
+		}
+
+	default:
+		fmt.Println("sqlCommand doesn't support yet ")
+	}
+
+	return false
+}
+
+func cmd_tx(obj yoctoparser.SQLObject) bool {
+	return true
 }
 
 // handle buffer io etc
