@@ -1,6 +1,7 @@
 package storage
 
 import (
+	"fmt"
 	"os"
 	"path/filepath"
 	"time"
@@ -25,16 +26,25 @@ func StorageInit() {
 
 func redo_loop() {
 	redofile := filepath.Join(GetConf("datadir"), "ydblog")
-	f, _ := os.OpenFile(redofile, os.O_WRONLY|os.O_APPEND, os.ModePerm)
+	f, err := os.OpenFile(redofile, os.O_CREATE|os.O_WRONLY|os.O_APPEND, os.ModePerm)
+	if err != nil {
+		log.Error.Println("Open REDO file failed: ", err)
+	}
+	fmt.Println(redofile)
 	for {
 		if int(len(REDOBUFFER)) > 0 {
 			redo := <-REDOBUFFER
-			f.WriteString(redo)
+			_, err := f.WriteString(redo)
+			if err != nil {
+				log.Error.Println("Flush redo log failed:", err)
+				fmt.Println("Flush redo log failed:", err)
+			}
 		} else {
 			time.Sleep(time.Duration(1) * time.Second)
 		}
 		log.Trace.Printf("Redo buffer usage: %d / %d\n", len(REDOBUFFER), cap(REDOBUFFER))
 	}
+	f.Close()
 }
 
 // scan the memory tables that big enough ,and push it into the merge flow
@@ -72,7 +82,11 @@ func (ior IORequest) Save() bool {
 		if len(MEMTABLE) == 32 {
 			log.Trace.Println("Table cache is null,wait for perge!")
 		} else {
-			MEMTABLE[ior.metadata][ior.key] = ior.data
+			if MEMTABLE[ior.metadata] == nil {
+				MEMTABLE[ior.metadata] = make(map[string]string)
+			} else {
+				MEMTABLE[ior.metadata][ior.key] = ior.data
+			}
 		}
 	}
 	return true

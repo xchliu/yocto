@@ -10,7 +10,7 @@ import (
 
 type buffer []string
 
-var REDOBUFFER = make(chan string, 128)
+var REDOBUFFER = make(chan string, 256)
 var CHANGEBUFFER = make(chan string, 128)
 
 //replace as the config value

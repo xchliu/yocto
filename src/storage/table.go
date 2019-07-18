@@ -75,12 +75,20 @@ func DML_Table(SQLStruct yoctoparser.SQLObject) bool {
 	ior.metadata = strings.Join([]string{SQLStruct.DB, SQLStruct.TableList[0]}, ".")
 	//Table level bottle on performance
 	// ior.key = string(get_next_id(ior.metadata))
-
 	switch SQLStruct.SQLCommand {
 	case parser.MySqlParserRULE_insertStatement:
 		{
 			ior.iotype = 1
-			// ior.data = SQLStruct.DataList
+			d := []string{}
+			for index, row := range SQLStruct.Changecoldata {
+				if index == 0 {
+					ior.key = row.DataAfter
+				} else {
+					d = append(d, row.DataAfter)
+				}
+			}
+			ior.data = strings.Join(d, " ")
+			fmt.Println(ior.metadata, ior.key, ior.data)
 			ior.Save()
 		}
 	case parser.MySqlParserRULE_updateStatement:

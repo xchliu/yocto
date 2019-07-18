@@ -65,7 +65,7 @@ func cmd(conn net.Conn) {
 		fmt.Printf("receive from client, data: %v\n", str)
 		var buffer bytes.Buffer
 		// buffer.WriteString("Result for ")
-		buffer.Write(buf[:n])
+		// buffer.Write(buf[:n])
 		buffer.WriteString(strconv.FormatBool(cmd_parse(str)) + "\n")
 		buffer.WriteString(conn.RemoteAddr().String())
 		conn.Write(buffer.Bytes())
@@ -113,22 +113,16 @@ func cmd_run(cmd string) bool {
 
 func cmd_dml(obj yoctoparser.SQLObject) bool {
 	// meta := obj.TableList
-	fmt.Println(obj.SQLCommand)
 	switch obj.SQLCommand {
 	case parser.MySqlParserRULE_insertStatement:
 		{
-			io_insert := new(storage.IORequest)
-			io_insert.Save()
+			return storage.DML_Table(obj)
 		}
 	case parser.MySqlParserRULE_updateStatement:
 		{
 			return true
 		}
 	}
-	return true
-}
-
-func cmd_tx(obj yoctoparser.SQLObject) bool {
 	return true
 }
 
@@ -149,32 +143,32 @@ func cmd_ddl(obj yoctoparser.SQLObject) bool {
 	return false
 }
 
-func cmd_dml(obj yoctoparser.SQLObject) bool {
-	switch obj.SQLCommand {
-	case parser.MySqlParserRULE_insertStatement:
-		{
-			return storage.DML_InsertStatement(obj)
-		}
-	case parser.MySqlParserRULE_deleteStatement:
-		{
+// func cmd_dml(obj yoctoparser.SQLObject) bool {
+// 	switch obj.SQLCommand {
+// 	case parser.MySqlParserRULE_insertStatement:
+// 		{
+// 			return storage.DML_InsertStatement(obj)
+// 		}
+// 	case parser.MySqlParserRULE_deleteStatement:
+// 		{
 
-		}
-	case parser.MySqlParserRULE_updateStatement:
-		{
+// 		}
+// 	case parser.MySqlParserRULE_updateStatement:
+// 		{
 
-		}
+// 		}
 
-	case parser.MySqlParserRULE_selectStatement:
-		{
+// 	case parser.MySqlParserRULE_selectStatement:
+// 		{
 
-		}
+// 		}
 
-	default:
-		fmt.Println("sqlCommand doesn't support yet ")
-	}
+// 	default:
+// 		fmt.Println("sqlCommand doesn't support yet ")
+// 	}
 
-	return false
-}
+// 	return false
+// }
 
 func cmd_tx(obj yoctoparser.SQLObject) bool {
 	return true
