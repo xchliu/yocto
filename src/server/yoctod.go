@@ -64,7 +64,7 @@ func cmd(conn net.Conn) {
 		str := string(buf[:n])
 		fmt.Printf("receive from client, data: %v\n", str)
 		var buffer bytes.Buffer
-		buffer.WriteString("Result for ")
+		// buffer.WriteString("Result for ")
 		buffer.Write(buf[:n])
 		buffer.WriteString(strconv.FormatBool(cmd_parse(str)) + "\n")
 		buffer.WriteString(conn.RemoteAddr().String())
@@ -85,7 +85,7 @@ func cmd_parse(cmd string) bool {
 func cmd_run(cmd string) bool {
 	fmt.Println(cmd)
 	sqlObject := yoctoparser.YoctoPaser(cmd, "")
-
+	fmt.Println(sqlObject.SQLType)
 	switch sqlObject.SQLType {
 
 	case parser.MySqlParserRULE_ddlStatement:
@@ -111,8 +111,28 @@ func cmd_run(cmd string) bool {
 	//}
 }
 
-func cmd_ddl(obj yoctoparser.SQLObject) bool {
+func cmd_dml(obj yoctoparser.SQLObject) bool {
+	// meta := obj.TableList
+	fmt.Println(obj.SQLCommand)
+	switch obj.SQLCommand {
+	case parser.MySqlParserRULE_insertStatement:
+		{
+			io_insert := new(storage.IORequest)
+			io_insert.Save()
+		}
+	case parser.MySqlParserRULE_updateStatement:
+		{
+			return true
+		}
+	}
+	return true
+}
 
+func cmd_tx(obj yoctoparser.SQLObject) bool {
+	return true
+}
+
+func cmd_ddl(obj yoctoparser.SQLObject) bool {
 	switch obj.SQLCommand {
 	case parser.MySqlParserRULE_createTable:
 		{

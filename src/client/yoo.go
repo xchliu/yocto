@@ -17,11 +17,11 @@ func main() {
 	fmt.Println(WELCOME)
 	reader := bufio.NewReader(os.Stdin)
 	conn, err := net.Dial("tcp", SERVER)
-	defer conn.Close()
 	if err != nil {
 		fmt.Printf("Connect failed, err : %v\n", err.Error())
 		return
 	}
+	defer conn.Close()
 	conn.SetDeadline(time.Now().Add(8 * time.Hour))
 	for {
 		fmt.Print(PROMOTE)

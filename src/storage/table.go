@@ -7,6 +7,7 @@ import (
 	"strconv"
 	"strings"
 	"yocto/src/yoctoparser"
+	"yocto/src/yoctoparser/grammer/parser"
 )
 
 type table struct {
@@ -69,14 +70,26 @@ func DDL_ColumnCreateTable(sqlObject yoctoparser.SQLObject) bool {
 	return true
 }
 
-func DML_Table(db string, name string, data string) bool {
+func DML_Table(SQLStruct yoctoparser.SQLObject) bool {
 	var ior IORequest
-	ior.data = data
-	ior.metadata = strings.Join([]string{db, name}, ".")
-	ior.iotype = 1
+	ior.metadata = strings.Join([]string{SQLStruct.DB, SQLStruct.TableList[0]}, ".")
 	//Table level bottle on performance
-	ior.key = string(get_next_id(ior.metadata))
-	return ior.save()
+	// ior.key = string(get_next_id(ior.metadata))
+
+	switch SQLStruct.SQLCommand {
+	case parser.MySqlParserRULE_insertStatement:
+		{
+			ior.iotype = 1
+			// ior.data = SQLStruct.DataList
+			ior.Save()
+		}
+	case parser.MySqlParserRULE_updateStatement:
+		{
+			return true
+		}
+	}
+	return true
+
 }
 
 func get_next_id(metadata string) int {
