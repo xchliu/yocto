@@ -28,6 +28,7 @@ type QueryColumnDefine struct {
 type SQLObject struct {
 	DB            string
 	TableList     []string
+	DataList      []string
 	SQLQuery      string
 	SQLType       int
 	SQLCommand    int
@@ -70,7 +71,6 @@ func (this *SQLObject) EnterInsertStatement(ctx *parser.InsertStatementContext) 
 	}
 
 	//fmt.Println(ctx.InsertStatementValue().)
-
 	for _, child := range ctx.InsertStatementValue().GetChildren() {
 		switch child.(type) {
 		case *antlr.TerminalNodeImpl:
@@ -234,7 +234,6 @@ func (this *SQLObject) EnterCreateDefinitions(ctx *parser.CreateDefinitionsConte
 		//for one col, including uid and definitions
 		for _, value := range createDefinition.GetChildren() {
 			switch value.(type) {
-
 			case *parser.UidContext:
 				tableColumn.Cname = value.(*parser.UidContext).SimpleId().GetText()
 
@@ -267,7 +266,7 @@ func YoctoPaser(query, db string) (s *SQLObject) {
 	antlr.ParseTreeWalkerDefault.Walk(ss, tree)
 	fmt.Println(ss)
 	//s = *ss
-	fmt.Println(tree.ToStringTree(p.GetTokenNames(), p.BaseParser))
+	// fmt.Println(tree.ToStringTree(p.GetTokenNames(), p.BaseParser))
 	return ss
 }
 
