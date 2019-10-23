@@ -26,6 +26,9 @@ func init() {
 	} else {
 		logfile, _ = CFG.GetValue("global", "logfile")
 	}
+	if logfile == "" {
+		logfile = "yoctodb.log"
+	}
 	log.LogInit(logfile)
 	log.Info.Printf("init system")
 	go storage.StorageInit()

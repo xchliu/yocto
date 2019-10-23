@@ -1,5 +1,6 @@
 [global]
 debug=1
+port=6612
 datadir=/tmp/yocto/data
 logfile=/tmp/yocto/data/yocto.log
 
